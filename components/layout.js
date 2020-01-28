@@ -38,17 +38,17 @@ const Layout = props => (
         href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap"
         rel="stylesheet"
       />
-
-      <style>{`
-    
-
-    }
-  `}</style>
     </Head>
     <Header />
     {props.children}
-    <Communication />
+    <div className="communication-container">
+      <Communication />
+    </div>
     <style jsx>{`
+    @media only screen and (max-width: 600px) {
+      .communication-container {
+        visibility: hidden;
+      }
       .layout-container {
         #background-color: #d6c698;
         #background-color: cyan;
