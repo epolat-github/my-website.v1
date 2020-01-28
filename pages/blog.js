@@ -89,7 +89,7 @@ const Blog = ({ posts, postCount, currPage }) => (
   </Layout>
 );
 Blog.getInitialProps = async ({ query: { page = 1 } }) => {
-  const res = await fetch(`https://website-erinc-polat.herokuapp.com/api/posts?page=${page}`);
+  const res = await fetch(`${process.env.baseUrl}api/posts?page=${page}`);
   const data = await res.json();
   return {
     posts: data.posts,
