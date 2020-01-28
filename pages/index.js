@@ -13,7 +13,7 @@ const Index = () => (
         <p>{"}"};</p> */}
 
         <p>
-          Erinç Polat = {"{"}
+          deneme Polat = {"{"}
           <br /> Full-time: "learner",
           <br /> Part-time: "student"
           <br /> {"}"}
