@@ -45,16 +45,18 @@ const Layout = props => (
       <Communication />
     </div>
     <style jsx>{`
-    @media only screen and (max-width: 600px) {
-      .communication-container {
-        visibility: hidden;
-      }
+    
       .layout-container {
         #background-color: #d6c698;
         #background-color: cyan;
         #background-color: rgb(10, 25, 47);
+        overflow-x: hidden;
         margin: 0px;
         padding: 0px;
+      }
+      @media only screen and (max-width: 600px) {
+      .communication-container {
+        visibility: hidden;
       }
     `}</style>
   </div>

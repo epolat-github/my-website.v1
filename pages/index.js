@@ -12,13 +12,13 @@ const Index = () => (
         </p>
         <p>{"}"};</p> */}
 
-        <p>Erinç Polat = {"{"} 
-        <br />  Full-time: "learner",
-        <br />  Part-time: "student"
-        <br />  {"}"}
+        <p>
+          Erinç Polat = {"{"}
+          <br /> Full-time: "learner",
+          <br /> Part-time: "student"
+          <br /> {"}"}
         </p>
         {/* <img src="/photo.png" alt="picture" /> */}
-
       </section>
     </article>
     <style jsx>{`
@@ -48,6 +48,14 @@ const Index = () => (
       #summaryText img:hover {
         filter: grayscale(40%);
       }
+      @media only screen and (max-width: 600px) {
+      #summaryText {
+        margin: 5%;
+      }
+      #summaryText p {
+        font-size: 40px;
+      }
+
     `}</style>
   </Layout>
 );

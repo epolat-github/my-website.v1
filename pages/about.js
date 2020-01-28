@@ -12,10 +12,18 @@ const About = () => (
       </section>
     </article>
     <style jsx>{`
-      section {
-        position:relative;
+      #about-image {
+        position:absolute;
         display:inline-block;
+        margin-bottom: 30px;
       }
+      #info-about {
+        display: inline;
+        position: relative;
+        left: 45%;
+        top: 45%;
+      }
+
       h1 {
         margin:0;
         font-weight: bold;
@@ -28,6 +36,14 @@ const About = () => (
         left:150px;
         border-radius: 20%;
         width: 70%;
+      }
+      @media only screen and (max-width: 600px) {
+        #info-about {
+          left: 10%;
+        }
+        img {
+          left: 10%;
+        }
       }
     `}</style>
   </Layout>
