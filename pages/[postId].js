@@ -1,6 +1,43 @@
 import Layout from "../components/layout";
 import fetch from "isomorphic-unfetch";
 import ReactMarkdown from "react-markdown";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  RedditShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  WhatsappIcon,
+  TwitterIcon,
+  RedditIcon
+} from "react-share";
+
+const sharePost = postSlug => {
+  const url = process.env.baseUrl + postSlug;
+  return (
+    <div id="share-section">
+      <FacebookShareButton url={url}>
+        <FacebookIcon round />
+      </FacebookShareButton>
+
+      <WhatsappShareButton url={url}>
+        <WhatsappIcon round />
+      </WhatsappShareButton>
+
+      <TwitterShareButton url={url}>
+        <TwitterIcon round />
+      </TwitterShareButton>
+
+      <RedditShareButton url={url}>
+        <RedditIcon round />
+      </RedditShareButton>
+      <style jsx>{`
+        #share-section {
+        }
+      `}</style>
+    </div>
+  );
+};
 
 const Post = ({ post }) => {
   return (
@@ -11,6 +48,7 @@ const Post = ({ post }) => {
           {post.details && <ReactMarkdown source={post.details} />}
           <p>{post.slug}</p>
           <p>{post.date}</p>
+          {sharePost(post.slug)}
         </section>
       </article>
       <style jsx>{`
@@ -25,7 +63,7 @@ const Post = ({ post }) => {
   );
 };
 
-Post.getInitialProps = async ({ query }) => {
+Post.getInitialProps = async ({ query, req }) => {
   const res = await fetch(`${process.env.baseUrl}api/${query.postId}`);
   const data = await res.json();
 
