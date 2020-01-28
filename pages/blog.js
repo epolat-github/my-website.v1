@@ -88,11 +88,9 @@ const Blog = ({ posts, postCount, currPage }) => (
     `}</style>
   </Layout>
 );
-
 Blog.getInitialProps = async ({ query: { page = 1 } }) => {
-  const res = await fetch(`http://localhost:3000/api/posts?page=${page}`);
+  const res = await fetch(`${process.env.baseUrl}api/posts?page=${page}`);
   const data = await res.json();
-
   return {
     posts: data.posts,
     postCount: parseInt(data.postCount, 10),

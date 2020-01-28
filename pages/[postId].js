@@ -25,16 +25,11 @@ const Post = ({ post }) => {
   );
 };
 
-Post.getInitialProps = async ({ req, query }) => {
-  const host = req.headers.host;
-
-  const res = await fetch(`http://${host}/api/${query.postId}`);
+Post.getInitialProps = async ({ query }) => {
+  const res = await fetch(`${process.env.baseUrl}api/${query.postId}`);
   const data = await res.json();
 
   return { post: data.post };
 };
-
-//yeni api end-point oluştur (postId alan)
-//burada getinitialprops'la postId'yle post ayrıntısı al.
 
 export default Post;
