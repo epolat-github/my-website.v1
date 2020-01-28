@@ -26,7 +26,7 @@ const Post = ({ post }) => {
 };
 
 Post.getInitialProps = async ({ query }) => {
-  const res = await fetch(`${process.env.baseUrl}api/${query.postId}`);
+  const res = await fetch(`https://website-erinc-polat.herokuapp.com/api/${query.postId}`);
   const data = await res.json();
 
   return { post: data.post };
