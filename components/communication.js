@@ -3,6 +3,7 @@ const Communication = () => (
     <ul>
       <li>
         <a
+          rel="noopener"
           target="_blank"
           href="https://www.linkedin.com/in/erin%C3%A7-polat-4bb7bb192/"
         >
@@ -10,17 +11,25 @@ const Communication = () => (
         </a>
       </li>
       <li>
-        <a target="_blank" href="https://www.instagram.com/erincpolat">
+        <a
+          rel="noopener"
+          target="_blank"
+          href="https://www.instagram.com/erincpolat"
+        >
           <img src="/socialMediaIcons/instagram-icon.png" />
         </a>
       </li>
       <li>
-        <a target="_blank" href="https://github.com/epolat-github">
+        <a
+          rel="noopener"
+          target="_blank"
+          href="https://github.com/epolat-github"
+        >
           <img src="/socialMediaIcons/github-icon.png" />
         </a>
       </li>
       <li>
-        <a target="_blank" href="mailto:erinc.polat@gmail.com">
+        <a rel="noopener" target="_blank" href="mailto:erinc.polat@gmail.com">
           <img src="/socialMediaIcons/gmail-icon.png" />
         </a>
       </li>
