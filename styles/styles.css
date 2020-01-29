@@ -3,7 +3,8 @@ body {
     /* overflow-y: hidden; */
     margin: 0;
     padding: 0;
-    background-image: url(/background.jpg); 
+    /* background-image: url(/background.jpg);  */
+    background-color: rgb(4, 48, 16);
     background-repeat: repeat;
     font-family: 'Roboto Mono', monospace;
 
