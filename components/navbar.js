@@ -73,7 +73,7 @@ const Navbar = () => (
   //       color: rgba(9, 178, 220, 0.4);
   //     }
   //   `}</style>
-  // </nav> 
+  // </nav>
   <nav
     id="navbar"
     className="navbar navbar-expand-sm justify-content-center bg-light"
@@ -105,9 +105,14 @@ const Navbar = () => (
         </Link>
       </li>
       <li className="nav-item">
-        <Link href="/blog">
-          <a className="nav-link">Resume</a>
-        </Link>
+        <a
+          className="nav-link"
+          rel="noopener"
+          target="_blank"
+          href="/Erinç-Polat-CV-EN.pdf"
+        >
+          Resume
+        </a>
       </li>
     </ul>
     <style jsx>{`

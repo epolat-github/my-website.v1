@@ -93,46 +93,24 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/parse-int */ "core-js/library/fn/parse-int");
-
-/***/ }),
-
-/***/ "./pages/api/posts.js":
-/*!****************************!*\
-  !*** ./pages/api/posts.js ***!
-  \****************************/
+/***/ "./pages/api/[postId].js":
+/*!*******************************!*\
+  !*** ./pages/api/[postId].js ***!
+  \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _src_blog_postList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../src/blog/postList */ "./src/blog/postList.js");
-
+/* harmony import */ var _src_blog_postList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../src/blog/postList */ "./src/blog/postList.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ((req, res) => {
-  const posts = Object(_src_blog_postList__WEBPACK_IMPORTED_MODULE_1__["postList"])(); //array of post obj
+  const allPosts = Object(_src_blog_postList__WEBPACK_IMPORTED_MODULE_0__["postList"])(); //array of post obj
 
-  let page = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(req.query.page, 10);
-
-  let firstIndex = 5 * (page - 1);
-  let lastIndex = 5 * page;
-
-  if (lastIndex > posts.length) {
-    lastIndex = posts.length;
-  }
-
+  const postId = req.query.postId;
+  const foundPost = allPosts.find(post => post.slug === postId);
   res.status(200).json({
-    posts: posts.slice(firstIndex, lastIndex),
-    postCount: posts.length
+    post: foundPost
   });
 });
 
@@ -210,27 +188,16 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 4:
-/*!**********************************!*\
-  !*** multi ./pages/api/posts.js ***!
-  \**********************************/
+/*!*************************************!*\
+  !*** multi ./pages/api/[postId].js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/epolat/Desktop/nextJs/website/pages/api/posts.js */"./pages/api/posts.js");
+module.exports = __webpack_require__(/*! /home/epolat/Desktop/nextJs/website/pages/api/[postId].js */"./pages/api/[postId].js");
 
-
-/***/ }),
-
-/***/ "core-js/library/fn/parse-int":
-/*!***********************************************!*\
-  !*** external "core-js/library/fn/parse-int" ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/library/fn/parse-int");
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=posts.js.map
+//# sourceMappingURL=[postId].js.map
