@@ -7,12 +7,10 @@ const Header = () => (
 
     <style jsx>{`
       .header-main {
-        position: sticky !important;
+        position: sticky!important;
         top: 0;
         #background-color: rgb(10, 25, 47);
         #background-color: #e3d8b8;
-        margin-bottom: 20px;
-        margin-top: 0px;
       }
     `}</style>
   </div>

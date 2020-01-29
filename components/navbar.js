@@ -1,79 +1,79 @@
 import Link from "next/link";
 
 const Navbar = () => (
-  /*<nav className="navbar">
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/portfolio">
-          <a>Portfolio</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/contact">
-          <a>Contact</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/blog">
-          <a>Blog</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/blog">
-          <a>Resume</a>
-        </Link>
-      </li>
-    </ul>
-    <style jsx>{`
-      .navbar {
-        align: center;
-        padding-left: 25%;
-        padding-right: 15%;
-        #margin-left: 30%;
-        #margin-top: 1%;
-      }
+  // <nav className="navbar">
+  //   <ul>
+  //     <li>
+  //       <Link href="/">
+  //         <a>Home</a>
+  //       </Link>
+  //     </li>
+  //     <li>
+  //       <Link href="/about">
+  //         <a>About</a>
+  //       </Link>
+  //     </li>
+  //     <li>
+  //       <Link href="/portfolio">
+  //         <a>Portfolio</a>
+  //       </Link>
+  //     </li>
+  //     <li>
+  //       <Link href="/contact">
+  //         <a>Contact</a>
+  //       </Link>
+  //     </li>
+  //     <li>
+  //       <Link href="/blog">
+  //         <a>Blog</a>
+  //       </Link>
+  //     </li>
+  //     <li>
+  //       <Link href="/blog">
+  //         <a>Resume</a>
+  //       </Link>
+  //     </li>
+  //   </ul>
+  //   <style jsx>{`
+  //     .navbar {
+  //       align: center;
+  //       padding-left: 25%;
+  //       padding-right: 15%;
+  //       #margin-left: 30%;
+  //       #margin-top: 1%;
+  //     }
 
-      .navbar ul {
-        list-style: none;
-        padding: 0px;
-      }
+  //     .navbar ul {
+  //       list-style: none;
+  //       padding: 0px;
+  //     }
 
-      .navbar li {
-        display: inline;
-        padding: 2%;
-      }
+  //     .navbar li {
+  //       display: inline;
+  //       padding: 2%;
+  //     }
 
-      .navbar li:hover {
-        border-top: solid;
-        border-color: #067c99;
-      }
+  //     .navbar li:hover {
+  //       border-top: solid;
+  //       border-color: #067c99;
+  //     }
 
-      .navbar a {
-        font-family: "Abril Fatface", cursive;
-        letter-spacing: 3px;
-        color: #a8ada9;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 26px;
-      }
+  //     .navbar a {
+  //       font-family: "Abril Fatface", cursive;
+  //       letter-spacing: 3px;
+  //       color: #a8ada9;
+  //       text-decoration: none;
+  //       text-transform: uppercase;
+  //       font-weight: bold;
+  //       font-size: 26px;
+  //     }
 
-      .navbar a:hover {
-        color: #767a76;
-        //color: rgba(9, 178, 220, 0.4);
-      }
-    `}</style>
-  </nav> */
+  //     .navbar a:hover {
+  //       color: #767a76;
+  //       color: rgba(9, 178, 220, 0.4);
+  //     }
+  //   `}</style>
+  // </nav> 
   <nav
     id="navbar"
     className="navbar navbar-expand-sm justify-content-center bg-light"

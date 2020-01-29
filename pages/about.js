@@ -2,7 +2,7 @@ import Layout from "../components/layout";
 
 const About = () => (
   <Layout>
-    <article id="portfolio-container">
+    <article id="about-container">
       <section id="about-image">
         <img src="/sa.png" alt="myPhoto" />
       </section>
@@ -12,6 +12,10 @@ const About = () => (
       </section>
     </article>
     <style jsx>{`
+      #about-container {
+        overflow-x: hidden;
+
+      }
       #about-image {
         position:absolute;
         display:inline-block;
