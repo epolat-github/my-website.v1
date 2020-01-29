@@ -29,6 +29,11 @@ const Layout = props => (
     {props.children}
     <div className="communication-container">
       <Communication />
+      {/* <script src="/__/firebase/7.7.0/firebase-app.js"></script>
+      <script src="/__/firebase/7.7.0/firebase-analytics.js"></script>
+      <script src="/__/firebase/7.7.0/firebase-firestore.js"></script>
+      <script src="/__/firebase/init.js"></script> */}
+
       <script
         src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
