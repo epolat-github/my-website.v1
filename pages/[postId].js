@@ -44,11 +44,12 @@ const Post = ({ post }) => {
     <Layout>
       <article>
         <section id="post-section">
-          <h1>{post.title}</h1>
-          {post.details && <ReactMarkdown source={post.details} />}
-          <p>{post.slug}</p>
-          <p>{post.date}</p>
-          {sharePost(post.slug)}
+          
+          <h1>{post && post.title}</h1>
+          {post && post.details && <ReactMarkdown source={post.details} />}
+          <p>{post && post.slug}</p>
+          <p>{post && post.date}</p>
+          {post && sharePost(post.slug)}
         </section>
       </article>
       <style jsx>{`
