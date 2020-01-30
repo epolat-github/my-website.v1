@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2443,95 +2443,186 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/signin.js":
+/*!*************************!*\
+  !*** ./pages/signin.js ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _src_dbCon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/dbCon */ "./src/dbCon.js");
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/home/epolat/Desktop/nextJs/website/pages/index.js";
+var _jsxFileName = "/home/epolat/Desktop/nextJs/website/pages/signin.js";
 
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Index = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+const signin = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 5
   },
   __self: undefined
-}, __jsx("article", {
-  className: "jsx-51056431",
+}, __jsx("h1", {
+  style: {
+    color: "white"
+  },
   __source: {
     fileName: _jsxFileName,
     lineNumber: 6
   },
   __self: undefined
-}, __jsx("section", {
-  id: "summaryText",
-  className: "jsx-51056431",
+}, "SIGN IN"), __jsx("input", {
+  type: "text",
+  placeholder: "email",
+  id: "email",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 7
   },
   __self: undefined
-}, __jsx("p", {
-  className: "jsx-51056431",
+}), __jsx("br", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 15
+    lineNumber: 8
   },
   __self: undefined
-}, "Erin\xE7 Polat = ", "{", __jsx("br", {
-  className: "jsx-51056431",
+}), __jsx("br", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 17
+    lineNumber: 9
   },
   __self: undefined
-}), " Full-time: \"learner\",", __jsx("br", {
-  className: "jsx-51056431",
+}), __jsx("input", {
+  type: "text",
+  placeholder: "password",
+  id: "pass",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 18
+    lineNumber: 10
   },
   __self: undefined
-}), " Part-time: \"student\"", __jsx("br", {
-  className: "jsx-51056431",
+}), __jsx("br", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 19
+    lineNumber: 11
   },
   __self: undefined
-}), " ", "}"))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-  id: "51056431",
+}), __jsx("button", {
+  className: "submit",
+  onClick: () => Object(_src_dbCon__WEBPACK_IMPORTED_MODULE_1__["authInstance"])().signInWithEmailAndPassword(document.getElementById("email").value, document.getElementById("pass").value).then(() => console.log("Login Successful!")).catch(function (error) {
+    // Handle Errors here.
+    console.log("Error code: ", error.code);
+    console.log("Error Message: ", error.message); // ...
+  }),
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 12
+  },
   __self: undefined
-}, "#summaryText.jsx-51056431{text-align:center;margin:10%;padding:1%;}#summaryText.jsx-51056431 p.jsx-51056431{font-family:'Roboto Mono',monospace;#color:#4d4737;color:#a8ada9;font-size:65px;font-weight:bold;line-height:1.5em;}#summaryText.jsx-51056431 img.jsx-51056431{-webkit-filter:grayscale(20%);filter:grayscale(20%);display:block;margin-left:auto;margin-right:auto;width:30%;height:auto;max-width:100%;}#summaryText.jsx-51056431 img.jsx-51056431:hover{-webkit-filter:grayscale(40%);filter:grayscale(40%);}@media only screen and (max-width:600px){#summaryText.jsx-51056431{margin:5%;}#summaryText.jsx-51056431 p.jsx-51056431{font-size:40px;}}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Vwb2xhdC9EZXNrdG9wL25leHRKcy93ZWJzaXRlL3BhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXVCZ0IsQUFHMkIsQUFLbUIsQUFTZixBQVNBLEFBSVosQUFHSyxVQUZqQixLQUdBLEdBOUJhLFdBQ0EsT0FLSSxJQUpqQixXQUtnQixDQU9BLEFBU2hCLGFBZmlCLENBT0UsY0FOQSxHQU9DLGNBTkEsSUFPUixVQUNFLElBUGQsUUFRaUIsZUFDakIiLCJmaWxlIjoiL2hvbWUvZXBvbGF0L0Rlc2t0b3AvbmV4dEpzL3dlYnNpdGUvcGFnZXMvaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgTGF5b3V0IGZyb20gXCIuLi9jb21wb25lbnRzL2xheW91dFwiO1xuaW1wb3J0IExpbmsgZnJvbSBcIm5leHQvbGlua1wiO1xuXG5jb25zdCBJbmRleCA9ICgpID0+IChcbiAgPExheW91dD5cbiAgICA8YXJ0aWNsZT5cbiAgICAgIDxzZWN0aW9uIGlkPVwic3VtbWFyeVRleHRcIj5cbiAgICAgICAgey8qIDxwPkVyaW7DpyBQb2xhdCA9IHtcIntcIn08L3A+XG4gICAgICAgIDxwPlxuICAgICAgICAgIEZ1bGwtdGltZTogXCJsZWFybmVyXCIsIDxiciAvPlxuICAgICAgICAgIFBhcnQtdGltZTogXCJzdHVkZW50XCIgPGJyIC8+XG4gICAgICAgIDwvcD5cbiAgICAgICAgPHA+e1wifVwifTs8L3A+ICovfVxuXG4gICAgICAgIDxwPlxuICAgICAgICAgIEVyaW7DpyBQb2xhdCA9IHtcIntcIn1cbiAgICAgICAgICA8YnIgLz4gRnVsbC10aW1lOiBcImxlYXJuZXJcIixcbiAgICAgICAgICA8YnIgLz4gUGFydC10aW1lOiBcInN0dWRlbnRcIlxuICAgICAgICAgIDxiciAvPiB7XCJ9XCJ9XG4gICAgICAgIDwvcD5cbiAgICAgICAgey8qIDxpbWcgc3JjPVwiL3Bob3RvLnBuZ1wiIGFsdD1cInBpY3R1cmVcIiAvPiAqL31cbiAgICAgIDwvc2VjdGlvbj5cbiAgICA8L2FydGljbGU+XG4gICAgPHN0eWxlIGpzeD57YFxuICAgICAgI3N1bW1hcnlUZXh0IHtcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICBtYXJnaW46IDEwJTtcbiAgICAgICAgcGFkZGluZzogMSU7XG4gICAgICB9XG4gICAgICAjc3VtbWFyeVRleHQgcCB7XG4gICAgICAgIGZvbnQtZmFtaWx5OiAnUm9ib3RvIE1vbm8nLCBtb25vc3BhY2U7XG4gICAgICAgIC8vbGV0dGVyLXNwYWNpbmc6IDEwcHg7XG4gICAgICAgICNjb2xvcjogIzRkNDczNztcbiAgICAgICAgY29sb3I6ICNhOGFkYTk7XG4gICAgICAgIGZvbnQtc2l6ZTogNjVweDtcbiAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgICAgIGxpbmUtaGVpZ2h0OiAxLjVlbTtcbiAgICAgIH1cbiAgICAgICNzdW1tYXJ5VGV4dCBpbWcge1xuICAgICAgICBmaWx0ZXI6IGdyYXlzY2FsZSgyMCUpO1xuICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gICAgICAgIG1hcmdpbi1yaWdodDogYXV0bztcbiAgICAgICAgd2lkdGg6IDMwJTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgICBtYXgtd2lkdGg6IDEwMCU7XG4gICAgICB9XG4gICAgICAjc3VtbWFyeVRleHQgaW1nOmhvdmVyIHtcbiAgICAgICAgZmlsdGVyOiBncmF5c2NhbGUoNDAlKTtcbiAgICAgIH1cbiAgICAgIEBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1heC13aWR0aDogNjAwcHgpIHtcbiAgICAgICNzdW1tYXJ5VGV4dCB7XG4gICAgICAgIG1hcmdpbjogNSU7XG4gICAgICB9XG4gICAgICAjc3VtbWFyeVRleHQgcCB7XG4gICAgICAgIGZvbnQtc2l6ZTogNDBweDtcbiAgICAgIH1cblxuICAgIGB9PC9zdHlsZT5cbiAgPC9MYXlvdXQ+XG4pO1xuXG5leHBvcnQgZGVmYXVsdCBJbmRleDtcbiJdfQ== */\n/*@ sourceURL=/home/epolat/Desktop/nextJs/website/pages/index.js */"));
+}, "Login"), __jsx("button", {
+  className: "submit",
+  onClick: () => Object(_src_dbCon__WEBPACK_IMPORTED_MODULE_1__["authInstance"])().signOut(),
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 31
+  },
+  __self: undefined
+}, "Log Out"), __jsx("p", {
+  style: {
+    color: "red"
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 34
+  },
+  __self: undefined
+}));
 
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+/* harmony default export */ __webpack_exports__["default"] = (signin);
 
 /***/ }),
 
-/***/ 5:
-/*!******************************!*\
-  !*** multi ./pages/index.js ***!
-  \******************************/
+/***/ "./src/dbCon.js":
+/*!**********************!*\
+  !*** ./src/dbCon.js ***!
+  \**********************/
+/*! exports provided: authInstance, dbInstance, checkUser, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "authInstance", function() { return authInstance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dbInstance", function() { return dbInstance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkUser", function() { return checkUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addDb; });
+const firebase = __webpack_require__(/*! firebase/app */ "firebase/app");
+
+__webpack_require__(/*! firebase/firestore */ "firebase/firestore");
+
+__webpack_require__(/*! firebase/firebase-auth */ "firebase/firebase-auth"); // TODO: move config to .env
+
+
+var firebaseConfig = {
+  apiKey: "AIzaSyCMm751lQ5J1PiOHFhwMjUQ9ephvrcxb5c",
+  authDomain: "website-v1-2ed9b.firebaseapp.com",
+  databaseURL: "https://website-v1-2ed9b.firebaseio.com",
+  // projectId: (`${process.env.REACT_APP_FIREBASE_PROJECT_ID}`),
+  projectId: "website-v1-2ed9b",
+  storageBucket: "website-v1-2ed9b.appspot.com",
+  messagingSenderId: "699186492876",
+  appId: "1:699186492876:web:c7fe7b35e7eaf9d6221969",
+  measurementId: "G-CKM1LGKGX5"
+}; // Initialize Firebase
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} // firebase.analytics();
+//instances
+
+
+const firestore = firebase.firestore();
+const auth = firebase.auth(); //methods
+
+const authInstance = () => auth;
+const dbInstance = () => firestore;
+auth.onAuthStateChanged(user => {
+  if (user) {
+    console.log(user.email);
+  } else {
+    // console.log("user is signed out");
+    console.log("signed out");
+  }
+}); // check logged in info
+
+const checkUser = () => {
+  return auth.currentUser ? true : false;
+}; //TODO: registerdaki ve signindeki fonkları buraya taşı
+// add blog posts to database
+
+function addDb(data) {
+  const docRef = firestore.collection("blogs").doc(data.blogSlug);
+  docRef.set({
+    blogName: data.blogName,
+    blogDetail: data.blogDetail
+  }).then(() => console.log("Saved")).catch(error => console.log("Got an error:" + error));
+}
+
+/***/ }),
+
+/***/ 6:
+/*!*******************************!*\
+  !*** multi ./pages/signin.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/epolat/Desktop/nextJs/website/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/epolat/Desktop/nextJs/website/pages/signin.js */"./pages/signin.js");
 
 
 /***/ }),
@@ -2646,6 +2737,39 @@ module.exports = require("core-js/library/fn/weak-map");
 
 /***/ }),
 
+/***/ "firebase/app":
+/*!*******************************!*\
+  !*** external "firebase/app" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/app");
+
+/***/ }),
+
+/***/ "firebase/firebase-auth":
+/*!*****************************************!*\
+  !*** external "firebase/firebase-auth" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/firebase-auth");
+
+/***/ }),
+
+/***/ "firebase/firestore":
+/*!*************************************!*\
+  !*** external "firebase/firestore" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/firestore");
+
+/***/ }),
+
 /***/ "next/head":
 /*!****************************!*\
   !*** external "next/head" ***!
@@ -2724,4 +2848,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=signin.js.map

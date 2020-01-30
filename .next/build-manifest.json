@@ -21,11 +21,19 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/blog": [
+    "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/index": [
+    "/next/dist/pages/_error": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/signin": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/write": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
