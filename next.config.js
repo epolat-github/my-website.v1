@@ -1,5 +1,4 @@
-require('dotenv').config()
-
+require("dotenv").config();
 
 module.exports = {
   webpack: config => {
@@ -11,6 +10,13 @@ module.exports = {
     return config;
   },
   env: {
-    baseUrl: process.env.NODE_ENV === "development" ? process.env.DEV_URL: process.env.PROD_URL,
-  },
+    //     DEV_URL=http://localhost:3000/
+    // PROD_URL=https://website-erinc-polat.herokuapp.com/
+    // PROD_URL=https://my-websitev1.etuna.now.sh/
+    // PROD_URL=http://www.erincpolat.com/
+    baseUrl:
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3000/"
+        : "https://website-erinc-polat.herokuapp.com/"
+  }
 };
