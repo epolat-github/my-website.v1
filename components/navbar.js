@@ -114,6 +114,16 @@ const Navbar = () => (
           Resume
         </a>
       </li>
+      <li className="nav-item">
+        <Link href="/signin">
+          <a className="nav-link">Sign-in</a>
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link href="/register">
+          <a className="nav-link">Register</a>
+        </Link>
+      </li>
     </ul>
     <style jsx>{`
       #navbar {

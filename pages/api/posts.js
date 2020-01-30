@@ -1,4 +1,5 @@
 import { dbInstance } from "../../src/dbCon";
+var dateFormat = require("dateformat");
 
 export default (req, res) => {
   // const posts = postList(); //array of post obj
@@ -6,6 +7,7 @@ export default (req, res) => {
   let posts = [];
   firestore
     .collection("blogs")
+    .orderBy("blogTime", "desc")
     .get()
     .then(snapshot => {
       snapshot.forEach(doc => {
@@ -16,7 +18,7 @@ export default (req, res) => {
           title: blogInfo.blogName,
           slug: blogSlug,
           details: blogInfo.blogDetail,
-          date: "1 Aralık"
+          date: dateFormat(blogInfo.blogTime, "mmmm dS, yyyy, h:MM:ss TT")          
         };
         posts.push(blogObj);
       });

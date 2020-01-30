@@ -12,7 +12,7 @@ var firebaseConfig = {
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
@@ -30,14 +30,14 @@ export const authInstance = () => auth;
 
 export const dbInstance = () => firestore;
 
-auth.onAuthStateChanged(user => {
-  if (user) {
-    console.log(user.email);
-  } else {
-    // console.log("user is signed out");
-    console.log("signed out");
-  }
-});
+// auth.onAuthStateChanged(user => {
+//   if (user) {
+//     console.log(user.email);
+//   } else {
+//     // console.log("user is signed out");
+//     console.log("signed out");
+//   }
+// });
 
 // check logged in info
 export const checkUser = () => {
@@ -53,7 +53,7 @@ export default function addDb(data) {
   docRef
     .set({
       blogName: data.blogName,
-      blogDetail: data.blogDetail
+      blogDetail: data.blogDetail,
     })
     .then(() => console.log("Saved"))
     .catch(error => console.log("Got an error:" + error));

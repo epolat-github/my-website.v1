@@ -1,4 +1,5 @@
 import { dbInstance } from "../../src/dbCon";
+var dateFormat = require("dateformat");
 
 export default (req, res) => {
   // const allPosts = postList();    //array of post obj
@@ -18,7 +19,7 @@ export default (req, res) => {
           title: blogInfo.blogName,
           slug: blogSlug,
           details: blogInfo.blogDetail,
-          date: "1 Aralık"
+          date: dateFormat(blogInfo.blogTime, "mmmm dS, yyyy, h:MM:ss TT")
         };
         posts.push(blogObj);
       });
