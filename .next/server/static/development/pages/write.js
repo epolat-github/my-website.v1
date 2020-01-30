@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2466,6 +2466,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
 const transferData = data => {
   const firestore = Object(_src_dbCon__WEBPACK_IMPORTED_MODULE_2__["dbInstance"])();
   let slug = data.blogSlug;
@@ -2485,89 +2486,97 @@ const transferData = data => {
 const Write = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 28
+    lineNumber: 29
   },
   __self: undefined
 }, __jsx("h1", {
   style: {
     color: "white"
   },
-  className: "jsx-2539153913",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 29
-  },
-  __self: undefined
-}, "Inspire Someone!"), __jsx("input", {
-  type: "text",
-  placeholder: "Blog Slug",
-  id: "inputSlug",
-  className: "jsx-2539153913",
+  className: "jsx-3940487907",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 30
   },
   __self: undefined
-}), __jsx("br", {
-  className: "jsx-2539153913",
+}, "Inspire Someone!"), __jsx("button", {
+  onClick: () => Object(_src_dbCon__WEBPACK_IMPORTED_MODULE_2__["checkUser"])() ? console.log("signed in") : console.log("not signed in"),
+  className: "jsx-3940487907",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 31
   },
   __self: undefined
-}), __jsx("br", {
-  className: "jsx-2539153913",
+}, "Check User"), __jsx("input", {
+  type: "text",
+  placeholder: "Blog Slug",
+  id: "inputSlug",
+  className: "jsx-3940487907",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 32
   },
   __self: undefined
-}), __jsx("input", {
-  type: "text",
-  placeholder: "Blog Title",
-  id: "inputName",
-  className: "jsx-2539153913",
+}), __jsx("br", {
+  className: "jsx-3940487907",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 33
   },
   __self: undefined
 }), __jsx("br", {
-  className: "jsx-2539153913",
+  className: "jsx-3940487907",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 34
   },
   __self: undefined
-}), __jsx("br", {
-  className: "jsx-2539153913",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 35
-  },
-  __self: undefined
-}), " ", __jsx("textarea", {
+}), __jsx("input", {
   type: "text",
-  placeholder: "Blog Detail",
-  id: "inputDetail",
-  className: "jsx-2539153913",
+  placeholder: "Blog Title",
+  id: "inputName",
+  className: "jsx-3940487907",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 35
   },
   __self: undefined
 }), __jsx("br", {
-  className: "jsx-2539153913",
+  className: "jsx-3940487907",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 36
   },
   __self: undefined
 }), __jsx("br", {
-  className: "jsx-2539153913",
+  className: "jsx-3940487907",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 37
+  },
+  __self: undefined
+}), " ", __jsx("textarea", {
+  type: "text",
+  placeholder: "Blog Detail",
+  id: "inputDetail",
+  className: "jsx-3940487907",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 38
+  },
+  __self: undefined
+}), __jsx("br", {
+  className: "jsx-3940487907",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 39
+  },
+  __self: undefined
+}), __jsx("br", {
+  className: "jsx-3940487907",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 40
   },
   __self: undefined
 }), __jsx("button", {
@@ -2576,26 +2585,26 @@ const Write = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_3__["defau
     blogName: document.getElementById("inputName").value,
     blogDetail: document.getElementById("inputDetail").value
   }),
-  className: "jsx-2539153913" + " " + "submit",
+  className: "jsx-3940487907" + " " + "submit",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 38
+    lineNumber: 41
   },
   __self: undefined
 }, "Submit"), __jsx("p", {
   style: {
     color: "red"
   },
-  className: "jsx-2539153913",
+  className: "jsx-3940487907",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 50
+    lineNumber: 53
   },
   __self: undefined
 }), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-  id: "2539153913",
+  id: "3940487907",
   __self: undefined
-}, "h1.jsx-2539153913{position:relative;width:1vh;top:200px;margin:0;left:40%;}input.jsx-2539153913,button.jsx-2539153913,textarea.jsx-2539153913,p.jsx-2539153913{position:relative;left:40%;top:300px;}p.jsx-2539153913{width:1vh;}textarea.jsx-2539153913{height:150px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Vwb2xhdC9EZXNrdG9wL25leHRKcy93ZWJzaXRlL3BhZ2VzL3dyaXRlLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQWtEZ0IsQUFHMkIsQUFVQSxBQUtSLEFBR0csVUFGZixHQUdBLEtBbEJZLEFBVUQsU0FDQyxDQVZBLFNBV1osQ0FWVyxTQUNBLFNBQ1giLCJmaWxlIjoiL2hvbWUvZXBvbGF0L0Rlc2t0b3AvbmV4dEpzL3dlYnNpdGUvcGFnZXMvd3JpdGUuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgYWRkRGF0YSBmcm9tIFwiLi4vc3JjL2RiQ29uXCI7XG5pbXBvcnQgeyBkYkluc3RhbmNlIH0gZnJvbSBcIi4uL3NyYy9kYkNvblwiO1xuaW1wb3J0IExheW91dCBmcm9tIFwiLi4vY29tcG9uZW50cy9sYXlvdXRcIjtcblxuY29uc3QgdHJhbnNmZXJEYXRhID0gZGF0YSA9PiB7XG4gIGNvbnN0IGZpcmVzdG9yZSA9IGRiSW5zdGFuY2UoKTtcblxuICBsZXQgc2x1ZyA9IGRhdGEuYmxvZ1NsdWc7XG4gIGxldCBuYW1lID0gZGF0YS5ibG9nTmFtZTtcbiAgbGV0IGRldGFpbCA9IGRhdGEuYmxvZ0RldGFpbDtcblxuICBjb25zdCBwb3N0ID0geyBibG9nTmFtZTogbmFtZSwgYmxvZ0RldGFpbDogZGV0YWlsIH07XG5cbiAgY29uc3QgZG9jUmVmID0gZmlyZXN0b3JlLmNvbGxlY3Rpb24oXCJibG9nc1wiKS5kb2MoZGF0YS5ibG9nU2x1Zyk7XG5cbiAgZG9jUmVmXG4gICAgLnNldChwb3N0KVxuICAgIC50aGVuKCgpID0+IHtcbiAgICAgIGNvbnNvbGUubG9nKFwiU2F2ZWRcIik7XG4gICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFxuICAgICAgICBcInBcIlxuICAgICAgKS5pbm5lckhUTUwgPSBgc2x1ZzogJHtzbHVnfSwgbmFtZTogJHtuYW1lfSBjcmVhdGVkLmA7XG4gICAgfSlcbiAgICAuY2F0Y2goZXJyb3IgPT4gY29uc29sZS5sb2coXCJHb3QgYW4gZXJyb3I6XCIgKyBlcnJvcikpO1xufTtcblxuY29uc3QgV3JpdGUgPSAoKSA9PiAoXG4gIDxMYXlvdXQ+XG4gICAgPGgxIHN0eWxlPXt7IGNvbG9yOiBcIndoaXRlXCIgfX0+SW5zcGlyZSBTb21lb25lITwvaDE+XG4gICAgPGlucHV0IHR5cGU9XCJ0ZXh0XCIgcGxhY2Vob2xkZXI9XCJCbG9nIFNsdWdcIiBpZD1cImlucHV0U2x1Z1wiIC8+XG4gICAgPGJyIC8+XG4gICAgPGJyIC8+XG4gICAgPGlucHV0IHR5cGU9XCJ0ZXh0XCIgcGxhY2Vob2xkZXI9XCJCbG9nIFRpdGxlXCIgaWQ9XCJpbnB1dE5hbWVcIiAvPlxuICAgIDxiciAvPlxuICAgIDxiciAvPiA8dGV4dGFyZWEgdHlwZT1cInRleHRcIiBwbGFjZWhvbGRlcj1cIkJsb2cgRGV0YWlsXCIgaWQ9XCJpbnB1dERldGFpbFwiIC8+XG4gICAgPGJyIC8+XG4gICAgPGJyIC8+XG4gICAgPGJ1dHRvblxuICAgICAgY2xhc3NOYW1lPVwic3VibWl0XCJcbiAgICAgIG9uQ2xpY2s9eygpID0+XG4gICAgICAgIHRyYW5zZmVyRGF0YSh7XG4gICAgICAgICAgYmxvZ1NsdWc6IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiaW5wdXRTbHVnXCIpLnZhbHVlLFxuICAgICAgICAgIGJsb2dOYW1lOiBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImlucHV0TmFtZVwiKS52YWx1ZSxcbiAgICAgICAgICBibG9nRGV0YWlsOiBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImlucHV0RGV0YWlsXCIpLnZhbHVlXG4gICAgICAgIH0pXG4gICAgICB9XG4gICAgPlxuICAgICAgU3VibWl0XG4gICAgPC9idXR0b24+XG4gICAgPHAgc3R5bGU9e3sgY29sb3I6IFwicmVkXCIgfX0+PC9wPlxuICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgIGgxIHtcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICB3aWR0aDogMXZoO1xuICAgICAgICB0b3A6IDIwMHB4O1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGxlZnQ6IDQwJTtcbiAgICAgIH1cbiAgICAgIGlucHV0LFxuICAgICAgYnV0dG9uLFxuICAgICAgdGV4dGFyZWEsXG4gICAgICBwIHtcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICBsZWZ0OiA0MCU7XG4gICAgICAgIHRvcDogMzAwcHg7XG4gICAgICB9XG4gICAgICBwIHtcbiAgICAgICAgd2lkdGg6IDF2aDtcbiAgICAgIH1cbiAgICAgIHRleHRhcmVhIHtcbiAgICAgICAgaGVpZ2h0OiAxNTBweDtcbiAgICAgIH1cbiAgICBgfTwvc3R5bGU+XG4gIDwvTGF5b3V0PlxuKTtcblxuZXhwb3J0IGRlZmF1bHQgV3JpdGU7XG4iXX0= */\n/*@ sourceURL=/home/epolat/Desktop/nextJs/website/pages/write.js */"));
+}, "h2.jsx-3940487907{position:relative;color:white;width:700px;left:30%;}h1.jsx-3940487907{position:relative;width:1vh;top:200px;margin:0;left:40%;}input.jsx-3940487907,button.jsx-3940487907,textarea.jsx-3940487907,p.jsx-3940487907{position:relative;left:40%;top:300px;}p.jsx-3940487907{width:1vh;}textarea.jsx-3940487907{height:150px;}@media only screen and (max-width:600px){h2.jsx-3940487907{position:static;padding-left:4%;width:100vw;}h1.jsx-3940487907{position:relative;left:10%;}input.jsx-3940487907,button.jsx-3940487907,textarea.jsx-3940487907{position:relative;top:130px;left:80px;}}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Vwb2xhdC9EZXNrdG9wL25leHRKcy93ZWJzaXRlL3BhZ2VzL3dyaXRlLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXFEZ0IsQUFHMkIsQUFNQSxBQVVBLEFBS1IsQUFHRyxBQUlLLEFBTUUsQUFNQSxVQWxCdEIsR0FHQSxHQUlvQixFQTVCTixBQU1GLEFBVUQsQUFrQkUsQUFNQyxTQXZCRixBQWtCVixDQTVCVSxBQWtDRSxFQXhDQSxFQTZCRSxLQVpoQixDQVZXLEFBa0NULElBeENTLEVBNkJULEdBdEJTLElBTlgsS0FPQSIsImZpbGUiOiIvaG9tZS9lcG9sYXQvRGVza3RvcC9uZXh0SnMvd2Vic2l0ZS9wYWdlcy93cml0ZS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBhZGREYXRhIGZyb20gXCIuLi9zcmMvZGJDb25cIjtcbmltcG9ydCB7IGRiSW5zdGFuY2UsIGF1dGhJbnN0YW5jZSwgY2hlY2tVc2VyIH0gZnJvbSBcIi4uL3NyYy9kYkNvblwiO1xuaW1wb3J0IExheW91dCBmcm9tIFwiLi4vY29tcG9uZW50cy9sYXlvdXRcIjtcbmltcG9ydCB7IHVzZVJlZHVjZXIgfSBmcm9tIFwicmVhY3RcIjtcblxuY29uc3QgdHJhbnNmZXJEYXRhID0gZGF0YSA9PiB7XG4gIGNvbnN0IGZpcmVzdG9yZSA9IGRiSW5zdGFuY2UoKTtcblxuICBsZXQgc2x1ZyA9IGRhdGEuYmxvZ1NsdWc7XG4gIGxldCBuYW1lID0gZGF0YS5ibG9nTmFtZTtcbiAgbGV0IGRldGFpbCA9IGRhdGEuYmxvZ0RldGFpbDtcblxuICBjb25zdCBwb3N0ID0geyBibG9nTmFtZTogbmFtZSwgYmxvZ0RldGFpbDogZGV0YWlsIH07XG5cbiAgY29uc3QgZG9jUmVmID0gZmlyZXN0b3JlLmNvbGxlY3Rpb24oXCJibG9nc1wiKS5kb2MoZGF0YS5ibG9nU2x1Zyk7XG5cbiAgZG9jUmVmXG4gICAgLnNldChwb3N0KVxuICAgIC50aGVuKCgpID0+IHtcbiAgICAgIGNvbnNvbGUubG9nKFwiU2F2ZWRcIik7XG4gICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFxuICAgICAgICBcInBcIlxuICAgICAgKS5pbm5lckhUTUwgPSBgc2x1ZzogJHtzbHVnfSwgbmFtZTogJHtuYW1lfSBjcmVhdGVkLmA7XG4gICAgfSlcbiAgICAuY2F0Y2goZXJyb3IgPT4gY29uc29sZS5sb2coXCJHb3QgYW4gZXJyb3I6XCIgKyBlcnJvcikpO1xufTtcblxuY29uc3QgV3JpdGUgPSAoKSA9PiAoXG4gIDxMYXlvdXQ+XG4gICAgPGgxIHN0eWxlPXt7IGNvbG9yOiBcIndoaXRlXCIgfX0+SW5zcGlyZSBTb21lb25lITwvaDE+XG4gICAgPGJ1dHRvbiBvbkNsaWNrPXsoKSA9PiBjaGVja1VzZXIoKSA/IGNvbnNvbGUubG9nKFwic2lnbmVkIGluXCIpIDogY29uc29sZS5sb2coXCJub3Qgc2lnbmVkIGluXCIpfT5DaGVjayBVc2VyPC9idXR0b24+XG4gICAgPGlucHV0IHR5cGU9XCJ0ZXh0XCIgcGxhY2Vob2xkZXI9XCJCbG9nIFNsdWdcIiBpZD1cImlucHV0U2x1Z1wiIC8+XG4gICAgPGJyIC8+XG4gICAgPGJyIC8+XG4gICAgPGlucHV0IHR5cGU9XCJ0ZXh0XCIgcGxhY2Vob2xkZXI9XCJCbG9nIFRpdGxlXCIgaWQ9XCJpbnB1dE5hbWVcIiAvPlxuICAgIDxiciAvPlxuICAgIDxiciAvPntcIiBcIn1cbiAgICA8dGV4dGFyZWEgdHlwZT1cInRleHRcIiBwbGFjZWhvbGRlcj1cIkJsb2cgRGV0YWlsXCIgaWQ9XCJpbnB1dERldGFpbFwiPjwvdGV4dGFyZWE+XG4gICAgPGJyIC8+XG4gICAgPGJyIC8+XG4gICAgPGJ1dHRvblxuICAgICAgY2xhc3NOYW1lPVwic3VibWl0XCJcbiAgICAgIG9uQ2xpY2s9eygpID0+XG4gICAgICAgIHRyYW5zZmVyRGF0YSh7XG4gICAgICAgICAgYmxvZ1NsdWc6IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiaW5wdXRTbHVnXCIpLnZhbHVlLFxuICAgICAgICAgIGJsb2dOYW1lOiBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImlucHV0TmFtZVwiKS52YWx1ZSxcbiAgICAgICAgICBibG9nRGV0YWlsOiBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImlucHV0RGV0YWlsXCIpLnZhbHVlXG4gICAgICAgIH0pXG4gICAgICB9XG4gICAgPlxuICAgICAgU3VibWl0XG4gICAgPC9idXR0b24+XG4gICAgPHAgc3R5bGU9e3sgY29sb3I6IFwicmVkXCIgfX0+PC9wPlxuICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgIGgyIHtcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICAgIHdpZHRoOiA3MDBweDtcbiAgICAgICAgbGVmdDogMzAlO1xuICAgICAgfVxuICAgICAgaDEge1xuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgIHdpZHRoOiAxdmg7XG4gICAgICAgIHRvcDogMjAwcHg7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgbGVmdDogNDAlO1xuICAgICAgfVxuICAgICAgaW5wdXQsXG4gICAgICBidXR0b24sXG4gICAgICB0ZXh0YXJlYSxcbiAgICAgIHAge1xuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgIGxlZnQ6IDQwJTtcbiAgICAgICAgdG9wOiAzMDBweDtcbiAgICAgIH1cbiAgICAgIHAge1xuICAgICAgICB3aWR0aDogMXZoO1xuICAgICAgfVxuICAgICAgdGV4dGFyZWEge1xuICAgICAgICBoZWlnaHQ6IDE1MHB4O1xuICAgICAgfVxuICAgICAgQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA2MDBweCkge1xuICAgICAgICBoMiB7XG4gICAgICAgICAgcG9zaXRpb246IHN0YXRpYztcbiAgICAgICAgICBwYWRkaW5nLWxlZnQ6IDQlO1xuXG4gICAgICAgICAgd2lkdGg6IDEwMHZ3O1xuICAgICAgICB9XG4gICAgICAgIGgxIHtcbiAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgbGVmdDogMTAlO1xuICAgICAgICB9XG4gICAgICAgIGlucHV0LFxuICAgICAgICBidXR0b24sXG4gICAgICAgIHRleHRhcmVhIHtcbiAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgdG9wOiAxMzBweDtcbiAgICAgICAgICBsZWZ0OiA4MHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgYH08L3N0eWxlPlxuICA8L0xheW91dD5cbik7XG5cbmV4cG9ydCBkZWZhdWx0IFdyaXRlO1xuIl19 */\n/*@ sourceURL=/home/epolat/Desktop/nextJs/website/pages/write.js */"));
 
 /* harmony default export */ __webpack_exports__["default"] = (Write);
 
@@ -2605,26 +2614,49 @@ const Write = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_3__["defau
 /*!**********************!*\
   !*** ./src/dbCon.js ***!
   \**********************/
-/*! exports provided: dbInstance, default */
+/*! exports provided: authInstance, dbInstance, checkUser, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "authInstance", function() { return authInstance; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dbInstance", function() { return dbInstance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkUser", function() { return checkUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addDb; });
 const firebase = __webpack_require__(/*! firebase/app */ "firebase/app");
 
 __webpack_require__(/*! firebase/firestore */ "firebase/firestore");
+
+__webpack_require__(/*! firebase/firebase-auth */ "firebase/firebase-auth"); // TODO: move config to .env 
+
 
 var firebaseConfig = {}; // Initialize Firebase
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 } // firebase.analytics();
+//instances
 
 
 const firestore = firebase.firestore();
+const auth = firebase.auth(); //methods
+
+const authInstance = () => auth;
 const dbInstance = () => firestore;
+auth.onAuthStateChanged(user => {
+  if (user) {
+    console.log(user.email);
+  } else {
+    // console.log("user is signed out");
+    alert("signed out");
+  }
+}); // check logged in info
+
+const checkUser = () => {
+  return auth.currentUser ? true : false;
+}; //TODO: registerdaki ve signindeki fonkları buraya taşı 
+// add blog posts to database
+
 function addDb(data) {
   const docRef = firestore.collection("blogs").doc(data.blogSlug);
   docRef.set({
@@ -2635,7 +2667,7 @@ function addDb(data) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 8:
 /*!******************************!*\
   !*** multi ./pages/write.js ***!
   \******************************/
@@ -2765,6 +2797,17 @@ module.exports = require("core-js/library/fn/weak-map");
 /***/ (function(module, exports) {
 
 module.exports = require("firebase/app");
+
+/***/ }),
+
+/***/ "firebase/firebase-auth":
+/*!*****************************************!*\
+  !*** external "firebase/firebase-auth" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/firebase-auth");
 
 /***/ }),
 

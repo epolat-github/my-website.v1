@@ -1,6 +1,7 @@
 import addData from "../src/dbCon";
-import { dbInstance } from "../src/dbCon";
+import { dbInstance, authInstance, checkUser } from "../src/dbCon";
 import Layout from "../components/layout";
+import { useReducer } from "react";
 
 const transferData = data => {
   const firestore = dbInstance();
@@ -27,12 +28,14 @@ const transferData = data => {
 const Write = () => (
   <Layout>
     <h1 style={{ color: "white" }}>Inspire Someone!</h1>
+    <button onClick={() => checkUser() ? console.log("signed in") : console.log("not signed in")}>Check User</button>
     <input type="text" placeholder="Blog Slug" id="inputSlug" />
     <br />
     <br />
     <input type="text" placeholder="Blog Title" id="inputName" />
     <br />
-    <br /> <textarea type="text" placeholder="Blog Detail" id="inputDetail" />
+    <br />{" "}
+    <textarea type="text" placeholder="Blog Detail" id="inputDetail"></textarea>
     <br />
     <br />
     <button
@@ -49,6 +52,12 @@ const Write = () => (
     </button>
     <p style={{ color: "red" }}></p>
     <style jsx>{`
+      h2 {
+        position: relative;
+        color: white;
+        width: 700px;
+        left: 30%;
+      }
       h1 {
         position: relative;
         width: 1vh;
@@ -69,6 +78,25 @@ const Write = () => (
       }
       textarea {
         height: 150px;
+      }
+      @media only screen and (max-width: 600px) {
+        h2 {
+          position: static;
+          padding-left: 4%;
+
+          width: 100vw;
+        }
+        h1 {
+          position: relative;
+          left: 10%;
+        }
+        input,
+        button,
+        textarea {
+          position: relative;
+          top: 130px;
+          left: 80px;
+        }
       }
     `}</style>
   </Layout>
