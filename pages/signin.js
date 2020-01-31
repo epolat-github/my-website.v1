@@ -1,5 +1,6 @@
 import { authInstance, checkUser } from "../src/dbCon";
 import Layout from "../components/layout";
+import Link from "next/link";
 import Router from "next/router";
 
 const signin = () => (
@@ -25,13 +26,13 @@ const signin = () => (
               document.getElementById("status").innerHTML = "Logged in!";
               document.getElementById("pass").value = "";
               document.getElementById("email").value = "";
-              Router.replace(`/write`);
+              alert("Login Successful!");              
+              Router.push(`/write`);
             })
-            .catch(function(error) {
-              // Handle Errors here.
+            .catch((error) => {
+              document.getElementById("status").innerHTML = error.code;
               console.log("Error code: ", error.code);
               console.log("Error Message: ", error.message);
-              // ...
             });
         }
       }}

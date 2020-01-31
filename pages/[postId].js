@@ -44,20 +44,36 @@ const Post = ({ post }) => {
     <Layout>
       <article>
         <section id="post-section">
-          
           <h1>{post && post.title}</h1>
-          {post && post.details && <ReactMarkdown source={post.details} />}
-          <p>{post && post.slug}</p>
           <p>{post && post.date}</p>
-          {post && sharePost(post.slug)}
+          {post && post.details && <ReactMarkdown source={post.details} />}
         </section>
+        <section id="share-section">{post && sharePost(post.slug)}</section>
       </article>
       <style jsx>{`
         #post-section {
           color: white;
+          font-size: 20px;
           text-align: center;
           margin: 10%;
+          margin-top: 3%;
           padding: 1%;
+        }
+        h1 {
+          display:inline-block; 
+
+          width: auto;
+          text-transform: capitalize;
+          font-size: 60px;
+          font-weight: bold;
+          color: white;
+          background-color: grey;
+        }
+        p {
+          text-decoration: underline;
+          font-weight: 550;
+          text-align: right;
+          margin-right: 2%;
         }
       `}</style>
     </Layout>

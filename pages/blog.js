@@ -15,7 +15,9 @@ const Blog = ({ posts, postCount, currPage }) => (
                 <a>{post.title}</a>
               </Link>
             </h1>
-            {post.details && <ReactMarkdown source={post.details} />}
+            {post.details && (
+              <ReactMarkdown source={post.details.slice(0, 500) + "..."} />
+            )}
             <p>Post's date = {post.date}</p>
           </section>
         ))}
@@ -57,6 +59,9 @@ const Blog = ({ posts, postCount, currPage }) => (
       a {
         font-weight: bold;
       }
+      h1 {
+        text-transform: capitalize;
+      }
       #page-button-container {
         /*display: inline;
         position: relative;
@@ -84,6 +89,13 @@ const Blog = ({ posts, postCount, currPage }) => (
       }
       .page-button[disabled] {
         background-color: gray;
+      }
+      @media only screen and (max-width: 600px) {
+        #page-button-container {
+          max-width: 600px;
+          margin: 3% auto;
+          transform: translateX(18%);
+        }
       }
     `}</style>
   </Layout>

@@ -12,6 +12,7 @@ const Header = () => (
         #background-color: rgb(10, 25, 47);
         #background-color: #e3d8b8;
       }
+      
     `}</style>
   </div>
 );

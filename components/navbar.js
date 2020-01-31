@@ -139,6 +139,19 @@ const Navbar = () => (
         color: #767a76;
         //color: rgba(9, 178, 220, 0.4);
       }
+      @media only screen and (max-width: 600px) {
+        a {
+          font-size: 13px;
+          padding-right: 1% !important;
+        }
+        li {
+          padding-right: 2% !important;
+          border-right: 1px solid lightgrey;
+        }
+        .navbar-nav {
+          flex-direction: row !important;
+        }
+      }
     `}</style>
   </nav>
 );
