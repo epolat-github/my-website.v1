@@ -1,3 +1,5 @@
+// import { navbarModifier } from "../components/navbar";
+
 const firebase = require("firebase/app");
 require("firebase/firestore");
 require("firebase/firebase-auth");
@@ -41,8 +43,27 @@ export const dbInstance = () => firestore;
 
 // check logged in info
 export const checkUser = () => {
+  // console.log(auth.currentUser);
+  if (auth.currentUser === null) {
+    return false;
+  } else {
+    return true;
+  }
   return auth.currentUser ? true : false;
 };
+
+export var currentUser;
+
+auth.onAuthStateChanged(user => {
+  // console.log(user);
+  if (user) {
+    navbarModifier(user);
+    currentUser = true;
+  } else {
+    navbarModifier(false);
+    currentUser = false;
+  }
+});
 
 //TODO: registerdaki ve signindeki fonkları buraya taşı
 
@@ -53,7 +74,7 @@ export default function addDb(data) {
   docRef
     .set({
       blogName: data.blogName,
-      blogDetail: data.blogDetail,
+      blogDetail: data.blogDetail
     })
     .then(() => console.log("Saved"))
     .catch(error => console.log("Got an error:" + error));

@@ -26,8 +26,9 @@ const signin = () => (
               document.getElementById("status").innerHTML = "Logged in!";
               document.getElementById("pass").value = "";
               document.getElementById("email").value = "";
-              alert("Login Successful!");              
-              Router.push(`/write`);
+              alert("Login Successful!");      
+              location.reload();        
+              // Router.push(`/write`);
             })
             .catch((error) => {
               document.getElementById("status").innerHTML = error.code;
@@ -44,9 +45,6 @@ const signin = () => (
       onClick={() => {
         if (!checkUser()) {
           document.getElementById("status").innerHTML = "Already Logged Out";
-        } else {
-          authInstance().signOut();
-          document.getElementById("status").innerHTML = "Logged Out";
         }
         // if (checkUser()) {
         //   document.getElementById("status").innerHTML = "Problem logging out";
