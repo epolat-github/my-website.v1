@@ -44,9 +44,6 @@ const Write = () => (
     >
       Check User
     </button> */}
-    <input type="text" placeholder="Blog Slug" id="inputSlug" />
-    <br />
-    <br />
     <input type="text" placeholder="Blog Title" id="inputName" />
     <br />
     <br />
@@ -57,7 +54,7 @@ const Write = () => (
       className="submit"
       onClick={() => {
         transferData({
-          blogSlug: document.getElementById("inputSlug").value,
+          blogSlug: (document.getElementById("inputName").value).replace(/\s+/g, '-').toLowerCase(),
           blogName: document.getElementById("inputName").value,
           blogDetail: document.getElementById("inputDetail").value
         });

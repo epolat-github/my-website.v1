@@ -28,7 +28,7 @@ const Index = () => (
         padding: 1%;
       }
       #summaryText p {
-        font-family: 'Roboto Mono', monospace;
+        font-family: "Roboto Mono", monospace;
         //letter-spacing: 10px;
         #color: #4d4737;
         color: #a8ada9;
@@ -49,13 +49,16 @@ const Index = () => (
         filter: grayscale(40%);
       }
       @media only screen and (max-width: 600px) {
-      #summaryText {
-        margin: 5%;
+        #summaryText {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          margin: 5%;
+        }
+        #summaryText p {
+          font-size: 40px;
+        }
       }
-      #summaryText p {
-        font-size: 40px;
-      }
-
     `}</style>
   </Layout>
 );
