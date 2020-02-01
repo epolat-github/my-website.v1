@@ -57,10 +57,8 @@ export var currentUser;
 auth.onAuthStateChanged(user => {
   // console.log(user);
   if (user) {
-    navbarModifier(user);
     currentUser = true;
   } else {
-    navbarModifier(false);
     currentUser = false;
   }
 });

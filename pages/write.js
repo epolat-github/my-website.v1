@@ -10,6 +10,12 @@ const transferData = data => {
   let name = data.blogName;
   let detail = data.blogDetail;
 
+  if (slug == "" || name == "" || detail == "") {
+    document.getElementById("status").innerHTML =
+      "Fill the required areas please.";
+    return;
+  }
+
   const post = { blogName: name, blogDetail: detail, blogTime: Date.now() };
 
   const docRef = firestore.collection("blogs").doc(data.blogSlug);
@@ -18,24 +24,26 @@ const transferData = data => {
     .set(post)
     .then(() => {
       console.log("Saved");
-      document.querySelector(
-        "p"
-      ).innerHTML = `slug: ${slug}, name: ${name} created.`;
+      document.querySelector("p").innerHTML =
+        <strong>`slug: ${slug},`</strong> + `name: ${name} created.`;
     })
-    .catch(error => console.log("Got an error:" + error));
+    .catch(error => {
+      console.log("Got an error:" + error);
+      document.getElementById("status").innerHTML = `${error.message}`;
+    });
 };
 
 const Write = () => (
   <Layout>
     <h1 style={{ color: "white" }}>Inspire Someone!</h1>
-    <button
+    {/* <button
       id="checkUserButton"
       onClick={() =>
         checkUser() ? console.log("signed in") : console.log("not signed in")
       }
     >
       Check User
-    </button>
+    </button> */}
     <input type="text" placeholder="Blog Slug" id="inputSlug" />
     <br />
     <br />
@@ -47,18 +55,24 @@ const Write = () => (
     <br />
     <button
       className="submit"
-      onClick={() =>
+      onClick={() => {
         transferData({
           blogSlug: document.getElementById("inputSlug").value,
           blogName: document.getElementById("inputName").value,
           blogDetail: document.getElementById("inputDetail").value
-        })
-      }
+        });
+      }}
     >
       Submit
     </button>
-    <p style={{ color: "red" }}></p>
+    <div id="status-container">
+      <p id="status"></p>
+    </div>
     <style jsx>{`
+      #status-container {
+        color: red;
+        display: inline-block;
+      }
       h2 {
         position: relative;
         color: white;
@@ -79,9 +93,6 @@ const Write = () => (
         position: relative;
         left: 40%;
         top: 300px;
-      }
-      p {
-        width: 1vh;
       }
       textarea {
         height: 150px;
