@@ -19,7 +19,7 @@ export default (req, res) => {
           title: postInfo.blogName,
           slug: postSlug,
           details: postInfo.blogDetail,
-          date: dateFormat(postInfo.blogTime, "mmmm dS, yyyy, h:MM:ss TT")
+          date: dateFormat(postInfo.blogTime, "mmmm dS, yyyy")
         };
         posts.push(blogObj);
       });

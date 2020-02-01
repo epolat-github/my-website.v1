@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import Link from "next/link";
+import Communication from "../components/communication";
 
 const Index = () => (
   <Layout>
@@ -20,6 +20,7 @@ const Index = () => (
         </p>
         {/* <img src="/photo.png" alt="picture" /> */}
       </section>
+      <Communication />
     </article>
     <style jsx>{`
       #summaryText {

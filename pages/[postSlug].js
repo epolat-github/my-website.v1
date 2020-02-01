@@ -42,39 +42,57 @@ const sharePost = postSlug => {
 const Post = ({ post }) => {
   return (
     <Layout>
-      <article>
-        <section id="post-section">
-          <h1>{post && post.title}</h1>
+      <article id="post-container">
+        <section id="post-general">
+          <h1 id="blog-title">{post && post.title}</h1>
           <p>{post && post.date}</p>
+        </section>
+        <section id="post-content">
           {post && post.details && <ReactMarkdown source={post.details} />}
         </section>
-        <section id="share-section">{post && sharePost(post.slug)}</section>
+        <section id="share-section">
+          <p>Feel like sharing..?</p>
+          {post && sharePost(post.slug)}
+        </section>
       </article>
       <style jsx>{`
-        #post-section {
-          color: white;
-          font-size: 20px;
-          margin: 10%;
-          margin-top: 3%;
-          margin-bottom: 2%;
-          padding: 1%;
+        #post-container {
+          overflow-x: hidden;
         }
-        h1 {
+        #post-general {
+          border-bottom: 2px solid;
+          margin-left: 50%;
+          margin-top: 2%;
+          transform: translateX(-50%);
           display: inline-block;
-          width: auto;
           text-transform: capitalize;
-          font-size: 60px;
-          font-weight: bold;
+          text-align: center;
           color: white;
-          background-color: grey;
+        }
+        #post-content {
+          padding: 0 6%;
+          margin-top: 3%;
+          font-size: 20px;
+          color: white;
+        }
+        #post-general h1 {
+          font-weight: 600;
+          font-size: 60px;
+          color: #8587d4;
+        }
+         {
+          /* #blog-title {
+          display: inline-block;
+          text-align: center;
+        } */
         }
         p {
-          text-decoration: underline;
-          font-weight: 550;
-          text-align: right;
-          margin-right: 2%;
         }
         #share-section {
+          margin-top: 3%;
+          text-align: center;
+          font-size: 19px;
+          color: darkgrey;
           display: inline-block;
           position: relative;
           left: 50%;

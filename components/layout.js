@@ -51,7 +51,6 @@ const Layout = props => (
     </Head>
     {props.children}
     <div className="communication-container">
-      <Communication />
     </div>
     <style jsx>{`
     

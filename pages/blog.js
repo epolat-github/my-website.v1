@@ -50,7 +50,7 @@ const Blog = ({ posts, postCount, currPage }) => (
     <style jsx>{`
       #post-list {
         color: white;
-        border: 2px solid white;
+        border-bottom: 2px solid white;
         border-radius: 25%;
         text-align: center;
         margin: 1% 10%;
