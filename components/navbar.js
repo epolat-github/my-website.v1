@@ -95,8 +95,10 @@ const Navbar = () => (
               <a
                 className="nav-link"
                 onClick={() => {
-                  authInstance().signOut();
-                  Router.push("/");
+                  authInstance()
+                    .signOut()
+                    .then(() => Router.push("/"))
+                    .catch(() => console.log("Sign-out problem."));
                 }}
               >
                 Log-Out
