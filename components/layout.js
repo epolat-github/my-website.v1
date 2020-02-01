@@ -48,7 +48,6 @@ const Layout = props => (
         crossorigin="anonymous"
       ></script>
     </Head>
-    <Navbar />
     {props.children}
     <div className="communication-container">
       <Communication />
