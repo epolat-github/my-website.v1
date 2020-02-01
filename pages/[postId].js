@@ -57,11 +57,11 @@ const Post = ({ post }) => {
           text-align: center;
           margin: 10%;
           margin-top: 3%;
+          margin-bottom: 2%;
           padding: 1%;
         }
         h1 {
-          display:inline-block; 
-
+          display: inline-block;
           width: auto;
           text-transform: capitalize;
           font-size: 60px;
@@ -74,6 +74,12 @@ const Post = ({ post }) => {
           font-weight: 550;
           text-align: right;
           margin-right: 2%;
+        }
+        #share-section {
+          display: inline-block;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
         }
       `}</style>
     </Layout>

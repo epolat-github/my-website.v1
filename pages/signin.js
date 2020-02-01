@@ -14,47 +14,27 @@ const signin = () => (
     <button
       className="submit"
       onClick={() => {
-        if (checkUser()) {
-          document.getElementById("status").innerHTML = "Already Logged In";
-        } else {
-          authInstance()
-            .signInWithEmailAndPassword(
-              document.getElementById("email").value,
-              document.getElementById("pass").value
-            )
-            .then(() => {
-              document.getElementById("status").innerHTML = "Logged in!";
-              document.getElementById("pass").value = "";
-              document.getElementById("email").value = "";
-              alert("Login Successful!");      
-              location.reload();        
-              // Router.push(`/write`);
-            })
-            .catch((error) => {
-              document.getElementById("status").innerHTML = error.code;
-              console.log("Error code: ", error.code);
-              console.log("Error Message: ", error.message);
-            });
-        }
+        document.getElementById("status").innerHTML = "Checking credentials...";
+        authInstance()
+          .signInWithEmailAndPassword(
+            document.getElementById("email").value,
+            document.getElementById("pass").value
+          )
+          .then(() => {
+            document.getElementById("pass").value = "";
+            document.getElementById("email").value = "";
+            Router.push(`/`);
+          })
+          .catch(error => {
+            document.getElementById("status").innerHTML = error.code;
+            console.log("Error code: ", error.code);
+            console.log("Error Message: ", error.message);
+          });
       }}
     >
       Login
     </button>
-    <button
-      className="submit"
-      onClick={() => {
-        if (!checkUser()) {
-          document.getElementById("status").innerHTML = "Already Logged Out";
-        }
-        // if (checkUser()) {
-        //   document.getElementById("status").innerHTML = "Problem logging out";
-        // } else {
-        //   document.getElementById("status").innerHTML = "Logged Out";
-        // }
-      }}
-    >
-      Log Out
-    </button>
+    <button onClick={() => Router.push("/register")}>Register</button>
     <p id="status" style={{ color: "red" }}></p>
   </Layout>
 );

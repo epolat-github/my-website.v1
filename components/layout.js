@@ -2,6 +2,7 @@ import Head from "next/head";
 import Communication from "./communication";
 import Navbar from "./navbar";
 import NoSSR from "react-no-ssr";
+import Footer from "./footer";
 
 const Layout = props => (
   <div className="layout-container">

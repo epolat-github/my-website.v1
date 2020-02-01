@@ -32,7 +32,7 @@ const Index = () => (
         //letter-spacing: 10px;
         #color: #4d4737;
         color: #a8ada9;
-        font-size: 65px;
+        font-size: 80px;
         font-weight: bold;
         line-height: 1.5em;
       }

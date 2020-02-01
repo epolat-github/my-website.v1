@@ -92,9 +92,11 @@ const Blog = ({ posts, postCount, currPage }) => (
       }
       @media only screen and (max-width: 600px) {
         #page-button-container {
-          max-width: 600px;
-          margin: 3% auto;
-          transform: translateX(18%);
+          width: 100%;
+          /* margin: 3% 50%; */
+          display: inline-block;
+          margin-left: 50%;
+          transform: translateX(-40%);
         }
       }
     `}</style>

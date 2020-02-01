@@ -255,11 +255,11 @@ const Navbar = () => (
               <a className="nav-link">Sign-in</a>
             </Link>
           </li>
-          <li className="nav-item signed-out">
+          {/* <li className="nav-item signed-out">
             <Link href="/register">
               <a className="nav-link">Register</a>
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item signed-in">
             <Link href="/write">
               <a className="nav-link">Write</a>
