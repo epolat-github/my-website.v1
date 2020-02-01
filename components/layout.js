@@ -50,10 +50,7 @@ const Layout = props => (
       ></script>
     </Head>
     {props.children}
-    <div className="communication-container">
-    </div>
     <style jsx>{`
-    
       .layout-container {
         #background-color: #d6c698;
         #background-color: cyan;
@@ -62,8 +59,7 @@ const Layout = props => (
         padding: 0px;
       }
       @media only screen and (max-width: 600px) {
-      .communication-container {
-        visibility: hidden;
+        
       }
     `}</style>
   </div>

@@ -20,7 +20,9 @@ const Index = () => (
         </p>
         {/* <img src="/photo.png" alt="picture" /> */}
       </section>
-      <Communication />
+      <div className="communication-container">
+        <Communication />
+      </div>
     </article>
     <style jsx>{`
       #summaryText {
@@ -58,6 +60,9 @@ const Index = () => (
         }
         #summaryText p {
           font-size: 40px;
+        }
+        .communication-container {
+          visibility: hidden;
         }
       }
     `}</style>
