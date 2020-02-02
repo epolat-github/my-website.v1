@@ -23,8 +23,8 @@ export default (req, res) => {
         posts.push(blogObj);
       });
       let page = parseInt(req.query.page, 10);
-      let firstIndex = 5 * (page - 1);
-      let lastIndex = 5 * page;
+      let firstIndex = 6 * (page - 1);
+      let lastIndex = 6 * page;
       if (lastIndex > posts.length) {
         lastIndex = posts.length;
       }

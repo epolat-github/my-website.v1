@@ -4,10 +4,37 @@ import Router from "next/router";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
+const createCards = post => {
+  return (
+    <div key={post.slug + Math.random()} className="col-md-6 col-lg-4 mb-5">
+      <div className="card h-100 border-dark rounded text-white bg-dark mb-3">
+        <div className="card-body">
+          <div className="card-block">
+            <h3 className="card-title text-capitalize">
+              <Link href={post.slug}>
+                <a>{post.title}</a>
+              </Link>
+            </h3>
+            {post.details && (
+              <ReactMarkdown source={post.details.slice(0, 500) + "..."} />
+            )}
+          </div>
+        </div>
+        <div className="card-footer">
+          <small className="text-muted">{post.date}</small>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Blog = ({ posts, postCount, currPage }) => (
   <Layout>
     <article id="blog-container">
-      {posts &&
+        <div className="row m-5">
+          {posts && posts.map(post => createCards(post))}
+        </div>
+      {/* {posts &&
         posts.map(post => (
           <section key={post.slug + Math.random()} id="post-list">
             <h1>
@@ -20,7 +47,8 @@ const Blog = ({ posts, postCount, currPage }) => (
             )}
             <p>Post's date = {post.date}</p>
           </section>
-        ))}
+        ))} */}
+      {/* page buttons */}
       <div id="page-button-container">
         <button
           className="page-button"
@@ -29,7 +57,7 @@ const Blog = ({ posts, postCount, currPage }) => (
         >
           {`<<`}
         </button>
-        {[...Array(Math.ceil(postCount / 5))].map((curr, index) => (
+        {[...Array(Math.ceil(postCount / 6))].map((curr, index) => (
           <button
             key={"button" + index}
             onClick={() => Router.push(`/blog?page=${index + 1}`)}
@@ -40,7 +68,7 @@ const Blog = ({ posts, postCount, currPage }) => (
         ))}
         <button
           className="page-button"
-          disabled={currPage >= Math.ceil(postCount / 5)}
+          disabled={currPage >= Math.ceil(postCount / 6)}
           onClick={() => Router.push(`/blog?page=${currPage + 1}`)}
         >
           >>
@@ -59,7 +87,7 @@ const Blog = ({ posts, postCount, currPage }) => (
       a {
         font-weight: bold;
       }
-      h1 {
+      .card-title {
         text-transform: capitalize;
       }
       #page-button-container {

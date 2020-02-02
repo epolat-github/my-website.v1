@@ -37891,7 +37891,7 @@ function addDb(data) {
 
 /***/ }),
 
-/***/ 0:
+/***/ 3:
 /*!*********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fepolat%2FDesktop%2FnextJs%2Fwebsite%2Fpages%2Findex.js ***!
   \*********************************************************************************************************************************/
@@ -37914,5 +37914,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
