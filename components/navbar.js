@@ -45,12 +45,20 @@ const Navbar = () => (
           </a>
         </Link>
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
+          <li
+            className="nav-item"
+            data-toggle="collapse"
+            data-target=".navbar-collapse.show"
+          >
             <Link href="/">
               <a className="nav-link">Home</a>
             </Link>
           </li>
-          <li className="nav-item">
+          <li
+            className="nav-item"
+            data-toggle="collapse"
+            data-target=".navbar-collapse.show"
+          >
             <Link href="/about">
               <a className="nav-link">About</a>
             </Link>
@@ -60,12 +68,20 @@ const Navbar = () => (
             <a className="nav-link">Portfolio</a>
           </Link>
         </li> */}
-          <li className="nav-item">
+          <li
+            className="nav-item"
+            data-toggle="collapse"
+            data-target=".navbar-collapse.show"
+          >
             <Link href="/blog">
               <a className="nav-link">Blog</a>
             </Link>
           </li>
-          <li className="nav-item">
+          <li
+            className="nav-item"
+            data-toggle="collapse"
+            data-target=".navbar-collapse.show"
+          >
             <a
               className="nav-link"
               rel="noopener"
@@ -75,7 +91,11 @@ const Navbar = () => (
               Resume
             </a>
           </li>
-          <li className="nav-item signed-out">
+          <li
+            className="nav-item signed-out"
+            data-toggle="collapse"
+            data-target=".navbar-collapse.show"
+          >
             <Link href="/signin">
               <a className="nav-link">Sign-in</a>
             </Link>
@@ -85,12 +105,20 @@ const Navbar = () => (
               <a className="nav-link">Register</a>
             </Link>
           </li> */}
-          <li className="nav-item signed-in">
+          <li
+            className="nav-item signed-in"
+            data-toggle="collapse"
+            data-target=".navbar-collapse.show"
+          >
             <Link href="/write">
               <a className="nav-link">Write</a>
             </Link>
           </li>
-          <li className="nav-item signed-in">
+          <li
+            className="nav-item signed-in"
+            data-toggle="collapse"
+            data-target=".navbar-collapse.show"
+          >
             <Link href="/">
               <a
                 className="nav-link"

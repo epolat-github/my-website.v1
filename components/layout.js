@@ -58,9 +58,6 @@ const Layout = props => (
         margin: 0px;
         padding: 0px;
       }
-      @media only screen and (max-width: 600px) {
-        
-      }
     `}</style>
   </div>
 );
