@@ -7,7 +7,7 @@ const register = () => (
     <input type="text" placeholder="email" id="email" />
     <br />
     <br />
-    <input type="text" placeholder="password" id="pass" />
+    <input type="password" placeholder="password" id="pass" />
     <br />
     <button
       className="submit"

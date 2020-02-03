@@ -2,18 +2,14 @@ import Layout from "../components/layout";
 
 const About = () => (
   <Layout>
-    <article id="about-container">
-      <section id="about-image">
-        <img src="/sa.png" alt="myPhoto" />
-      </section>
-      <section id="about-info">
-        <h1>Hello, I am Erinç Polat</h1>
-        <p>I like to build stuff.</p>
+    <article className="container-fluid">
+      <section className="row">
+        <div className="col-lg-6 col-sm-12">
+          <img src="/photo.png" className="img-fluid"></img>
+        </div>
+        <div className="col-lg-6 bg-dark"></div>
       </section>
     </article>
-    <style jsx>{`
-      
-    `}</style>
   </Layout>
 );
 
