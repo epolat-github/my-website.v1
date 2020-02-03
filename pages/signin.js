@@ -23,7 +23,7 @@ const signin = () => (
           .then(() => {
             document.getElementById("pass").value = "";
             document.getElementById("email").value = "";
-            Router.push(`/`);
+            Router.push(`/blog`);
           })
           .catch(error => {
             document.getElementById("status").innerHTML = error.code;

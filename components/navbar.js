@@ -3,23 +3,23 @@ import Link from "next/link";
 import { checkUser, currentUser, authInstance } from "../src/dbCon";
 import Router from "next/router";
 
-authInstance().onAuthStateChanged(user => {
-  if (user) {
-    document
-      .querySelectorAll(".signed-out")
-      .forEach(item => (item.style.display = "none"));
-    document
-      .querySelectorAll(".signed-in")
-      .forEach(item => (item.style.display = "block"));
-  } else {
-    document
-      .querySelectorAll(".signed-out")
-      .forEach(item => (item.style.display = "block"));
-    document
-      .querySelectorAll(".signed-in")
-      .forEach(item => (item.style.display = "none"));
-  }
-});
+// authInstance().onAuthStateChanged(user => {
+//   if (user) {
+//     document
+//       .querySelectorAll(".signed-out")
+//       .forEach(item => (item.style.display = "none"));
+//     document
+//       .querySelectorAll(".signed-in")
+//       .forEach(item => (item.style.display = "block"));
+//   } else {
+//     document
+//       .querySelectorAll(".signed-out")
+//       .forEach(item => (item.style.display = "block"));
+//     document
+//       .querySelectorAll(".signed-in")
+//       .forEach(item => (item.style.display = "none"));
+//   }
+// });
 
 const Navbar = () => (
   <div>
@@ -91,7 +91,7 @@ const Navbar = () => (
               Resume
             </a>
           </li>
-          <li
+          {/* <li
             className="nav-item signed-out"
             data-toggle="collapse"
             data-target=".navbar-collapse.show"
@@ -99,13 +99,13 @@ const Navbar = () => (
             <Link href="/signin">
               <a className="nav-link">Sign-in</a>
             </Link>
-          </li>
+          </li> */}
           {/* <li className="nav-item signed-out">
             <Link href="/register">
               <a className="nav-link">Register</a>
             </Link>
           </li> */}
-          <li
+          {/* <li
             className="nav-item signed-in"
             data-toggle="collapse"
             data-target=".navbar-collapse.show"
@@ -113,8 +113,8 @@ const Navbar = () => (
             <Link href="/write">
               <a className="nav-link">Write</a>
             </Link>
-          </li>
-          <li
+          </li> */}
+          {/* <li
             className="nav-item signed-in"
             data-toggle="collapse"
             data-target=".navbar-collapse.show"
@@ -132,7 +132,7 @@ const Navbar = () => (
                 Log-Out
               </a>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
       <style jsx>{`

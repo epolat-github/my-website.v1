@@ -1,4 +1,5 @@
 // import { navbarModifier } from "../components/navbar";
+import { changeUserState } from "../pages/blog";
 
 const firebase = require("firebase/app");
 require("firebase/firestore");
@@ -55,12 +56,7 @@ export const checkUser = () => {
 export var currentUser;
 
 auth.onAuthStateChanged(user => {
-  // console.log(user);
-  if (user) {
-    currentUser = true;
-  } else {
-    currentUser = false;
-  }
+  changeUserState(user);
 });
 
 //TODO: registerdaki ve signindeki fonkları buraya taşı

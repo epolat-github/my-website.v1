@@ -33,11 +33,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/register": [
+    "/signin": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/signin": [
+    "/write": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
