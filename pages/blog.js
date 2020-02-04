@@ -25,60 +25,65 @@ export const changeUserState = user => {
   }
 };
 
-const modal = () => (
+const signinModal = () => (
   <div
-    class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
+    className="modal fade"
+    id="signinModal"
+    tabIndex="-1"
     role="dialog"
-    aria-labelledby="exampleModalLabel"
+    aria-labelledby="signinModalLabel"
     aria-hidden="true"
   >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">
+    <div className="modal-dialog" role="document">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title" id="signinModalLabel">
             Sign In
           </h5>
           <button
             type="button"
-            class="close"
+            className="close"
             data-dismiss="modal"
             aria-label="Close"
           >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <input type="text" placeholder="email" id="email" />
+        <div className="modal-body">
+          <input type="text" placeholder="email" id="emailSignin" />
           <br />
           <br />
 
-          <input type="password" placeholder="password" id="pass" />
-          <p id="status"></p>
+          <input type="password" placeholder="password" id="passSignin" />
+          <p id="statusSignin"></p>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+        <div className="modal-footer">
+          <button
+            type="button"
+            className="btn btn-secondary"
+            data-dismiss="modal"
+          >
             Close
           </button>
           <button
             type="button"
-            class="btn btn-primary"
+            className="btn btn-primary"
             onClick={() => {
-              document.getElementById("status").innerHTML =
+              document.getElementById("statusSignin").innerHTML =
                 "Checking credentials...";
               authInstance()
                 .signInWithEmailAndPassword(
-                  document.getElementById("email").value,
-                  document.getElementById("pass").value
+                  document.getElementById("emailSignin").value,
+                  document.getElementById("passSignin").value
                 )
                 .then(() => {
-                  document.getElementById("pass").value = "";
-                  document.getElementById("email").value = "";
+                  document.getElementById("passSignin").value = "";
+                  document.getElementById("emailSignin").value = "";
                   window.location.reload();
                 })
                 .catch(error => {
-                  document.getElementById("status").innerHTML = error.code;
+                  document.getElementById("statusSignin").innerHTML =
+                    error.code;
                   console.log("Error code: ", error.code);
                   console.log("Error Message: ", error.message);
                 });
@@ -92,22 +97,96 @@ const modal = () => (
   </div>
 );
 
+const registerModal = () => (
+  <div
+    className="modal fade"
+    id="registerModal"
+    tabIndex="-1"
+    role="dialog"
+    aria-labelledby="registerModalLabel"
+    aria-hidden="true"
+  >
+    <div className="modal-dialog" role="document">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title" id="registerModalLabel">
+            Register
+          </h5>
+          <button
+            type="button"
+            className="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div className="modal-body">
+          <input type="text" placeholder="email" id="emailRegister" />
+          <br />
+          <br />
+
+          <input type="password" placeholder="password" id="passRegister" />
+          <p id="statusRegister" style={{ marginTop: "3%" }}></p>
+        </div>
+        <div className="modal-footer">
+          <button
+            type="button"
+            className="btn btn-secondary"
+            data-dismiss="modal"
+          >
+            Close
+          </button>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => {
+              authInstance()
+                .createUserWithEmailAndPassword(
+                  document.getElementById("emailRegister").value,
+                  document.getElementById("passRegister").value
+                )
+                .then(() => {
+                  console.log("Registered.");
+                  document.getElementById("statusRegister").innerHTML =
+                    "Registered.";
+                  // authInstance().signOut();
+                  window.location.reload();
+                })
+                .catch(function(error) {
+                  console.log(error);
+                  document.getElementById("statusRegister").innerHTML =
+                    error.message;
+                });
+            }}
+          >
+            Register
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const blogButtons = () => (
   <div className="container-fluid mt-4">
     <div className="row d-flex justify-content-end">
       <div className="col-lg-2 col-md-2 col-6 sign-out">
-        <Link href="register">
-          <button type="button" className="btn btn-primary btn-lg">
-            Register
-          </button>
-        </Link>
+        <button
+          type="button"
+          className="btn btn-primary btn-lg"
+          data-toggle="modal"
+          data-target="#registerModal"
+        >
+          Register
+        </button>
       </div>
       <div className="col-lg-2 col-md-2 col-6 sign-out">
         <button
           type="button"
           className="btn btn-primary btn-lg"
           data-toggle="modal"
-          data-target="#exampleModal"
+          data-target="#signinModal"
         >
           Sign-in
         </button>
@@ -163,16 +242,19 @@ const createCards = post => {
 
 const Blog = ({ posts, postCount, currPage }) => (
   <Layout>
-    
     {/* Blog special Buttons */}
     {blogButtons()}
-    
-    {/* Modal */}
-    {modal()}
+
+    {/* Sign-in Modal */}
+    {signinModal()}
+
+    {/* Sign-out Modal */}
+    {registerModal()}
 
     {/* Posts */}
     <article id="blog-container">
       <div className="row m-5">
+        {/* Produce posts */}
         {posts && posts.map(post => createCards(post))}
       </div>
 
