@@ -32,13 +32,15 @@ const Index = () => (
         font-family: "Roboto Mono", monospace;
         //letter-spacing: 10px;
         #color: #4d4737;
-        color: #a8ada9;
+        #color: #66FCF1;
+        color: white;
         font-size: 85px;
         font-weight: bold;
         line-height: 1.60em;
       }
       .inline {
-        color: #ba0d00;
+        #color: #ba0d00;
+        color: #D1A172;
       }
       
       @media only screen and (max-width: 600px) {

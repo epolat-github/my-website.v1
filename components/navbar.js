@@ -24,7 +24,7 @@ import Router from "next/router";
 const Navbar = () => (
   <div>
     <nav
-      className="navbar navbar-expand-lg navbar-expand-md sticky-top navbar-light"
+      className="navbar navbar-expand-lg navbar-expand-md sticky-top bg-transparent"
       style={{ backgroundColor: "white" }}
     >
       <button

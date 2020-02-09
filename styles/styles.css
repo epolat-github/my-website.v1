@@ -3,7 +3,9 @@ html,body {
     /* overflow-y: hidden; */
     /* background-image: url(/background.jpg);  */
     height: 100%;
-    background-color: rgb(4, 48, 16);
+    /* background-color: rgb(4, 48, 16); */
+    /* background-color: #1F2833; */
+    background-color: #1D1E22;
     background-repeat: repeat;
     font-family: 'Roboto Mono', monospace;
 
