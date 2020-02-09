@@ -24,7 +24,7 @@ import Router from "next/router";
 const Navbar = () => (
   <div>
     <nav
-      className="navbar navbar-expand-lg navbar-expand-md sticky-top bg-transparent"
+      className="navbar navbar-expand-lg navbar-expand-md sticky-top navbar-dark bg-transparent"
       style={{ backgroundColor: "white" }}
     >
       <button
@@ -91,53 +91,12 @@ const Navbar = () => (
               Resume
             </a>
           </li>
-          {/* <li
-            className="nav-item signed-out"
-            data-toggle="collapse"
-            data-target=".navbar-collapse.show"
-          >
-            <Link href="/signin">
-              <a className="nav-link">Sign-in</a>
-            </Link>
-          </li> */}
-          {/* <li className="nav-item signed-out">
-            <Link href="/register">
-              <a className="nav-link">Register</a>
-            </Link>
-          </li> */}
-          {/* <li
-            className="nav-item signed-in"
-            data-toggle="collapse"
-            data-target=".navbar-collapse.show"
-          >
-            <Link href="/write">
-              <a className="nav-link">Write</a>
-            </Link>
-          </li> */}
-          {/* <li
-            className="nav-item signed-in"
-            data-toggle="collapse"
-            data-target=".navbar-collapse.show"
-          >
-            <Link href="/">
-              <a
-                className="nav-link"
-                onClick={() => {
-                  authInstance()
-                    .signOut()
-                    .then(() => Router.push("/"))
-                    .catch(() => console.log("Sign-out problem."));
-                }}
-              >
-                Log-Out
-              </a>
-            </Link>
-          </li> */}
         </ul>
       </div>
       <style jsx>{`
         a {
-          font-size: 25px;
+
+          font-size: 30px;
           margin-right: 20px;
         }
       `}</style>
