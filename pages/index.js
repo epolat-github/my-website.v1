@@ -3,8 +3,8 @@ import Communication from "../components/communication";
 
 const Index = () => (
   <Layout>
-    <article>
-      <section id="summaryText">
+    <article className="jumbotron bg-transparent">
+      <section className="container" id="summaryText">
         {/* <p>Erinç Polat = {"{"}</p>
         <p>
           Full-time: "learner", <br />
@@ -12,10 +12,10 @@ const Index = () => (
         </p>
         <p>{"}"};</p> */}
 
-        <p>
+        <p className="text-center text-wrap align-middle">
           Erinç Polat = {"{"}
-          <br /> Full-time: "learner",
-          <br /> Part-time: "student"
+          <br /> Full-time: "<span className="inline">learner</span>",
+          <br /> Part-time: "<span className="inline">student</span>"
           <br /> {"}"}
         </p>
         {/* <img src="/photo.png" alt="picture" /> */}
@@ -26,41 +26,32 @@ const Index = () => (
     </article>
     <style jsx>{`
       #summaryText {
-        text-align: center;
-        margin: 10%;
-        padding: 1%;
+        margin-top: 4%;
       }
       #summaryText p {
         font-family: "Roboto Mono", monospace;
         //letter-spacing: 10px;
         #color: #4d4737;
         color: #a8ada9;
-        font-size: 80px;
+        font-size: 85px;
         font-weight: bold;
-        line-height: 1.5em;
+        line-height: 1.60em;
       }
-      #summaryText img {
-        filter: grayscale(20%);
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 30%;
-        height: auto;
-        max-width: 100%;
+      .inline {
+        color: #ba0d00;
       }
-      #summaryText img:hover {
-        filter: grayscale(40%);
-      }
+      
       @media only screen and (max-width: 600px) {
-        #summaryText {
+        {/* #summaryText {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
           margin: 5%;
-        }
+        } */}
         #summaryText p {
-          font-size: 40px;
-        }
+          font-size: 45px;
+          line-height: 1.8em;
+        } 
         .communication-container {
           visibility: hidden;
         }

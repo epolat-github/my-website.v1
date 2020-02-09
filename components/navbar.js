@@ -41,7 +41,7 @@ const Navbar = () => (
       <div className="collapse navbar-collapse" id="navbarNav">
         <Link href="/">
           <a className="navbar-brand">
-            <img src="/favicon.png" width="43" height="43" alt="logo" />
+            <img src="/logo2.png" alt="logo" />
           </a>
         </Link>
         <ul className="navbar-nav ml-auto">
