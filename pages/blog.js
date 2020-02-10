@@ -259,7 +259,7 @@ const Blog = ({ posts, postCount, currPage }) => (
       </div>
 
       {/* Pagination */}
-      <div id="page-button-container">
+      <nav id="page-button-container">
         <button
           className="page-button"
           disabled={currPage <= 1}
@@ -283,7 +283,7 @@ const Blog = ({ posts, postCount, currPage }) => (
         >
           >>
         </button>
-      </div>
+      </nav>
     </article>
     <style jsx>{`
       #post-list {
@@ -309,7 +309,7 @@ const Blog = ({ posts, postCount, currPage }) => (
         transform: translateX(25%);
       }
       .page-button {
-        background-color: #0083FE; /* Green */
+        background-color: #0083fe; /* Green */
         border: 1px solid white;
         border-radius: 20%;
         color: white;
@@ -323,7 +323,7 @@ const Blog = ({ posts, postCount, currPage }) => (
         //float: left;
       }
       .page-button:hover {
-        background-color: #2E5E8B;
+        background-color: #2e5e8b;
       }
       .page-button[disabled] {
         background-color: gray;
