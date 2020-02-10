@@ -3,7 +3,7 @@ import fetch from "isomorphic-unfetch";
 import Router from "next/router";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-import { authInstance } from "../src/dbCon";
+import { authInstance, checkUser } from "../src/dbCon";
 
 export const changeUserState = user => {
   if (user) {
@@ -169,7 +169,7 @@ const registerModal = () => (
 );
 
 const blogButtons = () => (
-  <div className="container-fluid mt-4">
+  <div className="container-fluid mt-2">
     <div className="row d-flex justify-content-end">
       <div className="col-lg-2 col-md-2 col-6 sign-out">
         <button
@@ -201,7 +201,7 @@ const blogButtons = () => (
       <div className="col-lg-2 col-md-2 col-6 sign-in">
         <button
           type="button"
-          className="btn btn-primary btn-lg"
+          className="btn btn-secondary btn-lg"
           onClick={() => {
             authInstance()
               .signOut()
@@ -253,7 +253,7 @@ const Blog = ({ posts, postCount, currPage }) => (
 
     {/* Posts */}
     <article id="blog-container">
-      <div className="row m-5">
+      <div className="row ml-5 mr-5 mt-5">
         {/* Produce posts */}
         {posts && posts.map(post => createCards(post))}
       </div>
@@ -309,7 +309,7 @@ const Blog = ({ posts, postCount, currPage }) => (
         transform: translateX(25%);
       }
       .page-button {
-        background-color: #4caf50; /* Green */
+        background-color: #0083FE; /* Green */
         border: 1px solid white;
         border-radius: 20%;
         color: white;
@@ -323,10 +323,13 @@ const Blog = ({ posts, postCount, currPage }) => (
         //float: left;
       }
       .page-button:hover {
-        background-color: #3e8e41;
+        background-color: #2E5E8B;
       }
       .page-button[disabled] {
         background-color: gray;
+      }
+      a[disabled] {
+        background-color: red;
       }
       @media only screen and (max-width: 600px) {
         #page-button-container {

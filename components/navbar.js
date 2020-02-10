@@ -3,30 +3,9 @@ import Link from "next/link";
 import { checkUser, currentUser, authInstance } from "../src/dbCon";
 import Router from "next/router";
 
-// authInstance().onAuthStateChanged(user => {
-//   if (user) {
-//     document
-//       .querySelectorAll(".signed-out")
-//       .forEach(item => (item.style.display = "none"));
-//     document
-//       .querySelectorAll(".signed-in")
-//       .forEach(item => (item.style.display = "block"));
-//   } else {
-//     document
-//       .querySelectorAll(".signed-out")
-//       .forEach(item => (item.style.display = "block"));
-//     document
-//       .querySelectorAll(".signed-in")
-//       .forEach(item => (item.style.display = "none"));
-//   }
-// });
-
 const Navbar = () => (
   <div>
-    <nav
-      className="navbar navbar-expand-lg navbar-expand-md sticky-top navbar-dark bg-transparent"
-      style={{ backgroundColor: "white" }}
-    >
+    <nav className="navbar navbar-expand-lg navbar-expand-md sticky-top navbar-dark bg-transparent">
       <button
         className="navbar-toggler"
         type="button"
@@ -94,10 +73,15 @@ const Navbar = () => (
         </ul>
       </div>
       <style jsx>{`
+        .active {
+          text-color:red;
+        }
         a {
-
           font-size: 30px;
           margin-right: 20px;
+        }
+        a:hover {
+          color: #de9e73 !important;
         }
       `}</style>
     </nav>
