@@ -306,6 +306,7 @@ const Blog = ({ posts, postCount, currPage }) => (
         left: 40%; */
         max-width: 600px;
         margin: 0 auto;
+        margin-bottom: 2%;
         transform: translateX(25%);
       }
       .page-button {
@@ -332,13 +333,18 @@ const Blog = ({ posts, postCount, currPage }) => (
         background-color: red;
       }
       @media only screen and (max-width: 600px) {
+        .row {
+          margin: 5% 2% 3% 2% !important;
+        }
         #page-button-container {
           width: 100%;
           /* margin: 3% 50%; */
           display: inline-block;
           margin-left: 50%;
+          margin-bottom: 10%;
           transform: translateX(-40%);
         }
+
       }
     `}</style>
   </Layout>
