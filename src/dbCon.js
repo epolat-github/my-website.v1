@@ -44,12 +44,6 @@ export const dbInstance = () => firestore;
 
 // check logged in info
 export const checkUser = () => {
-  // console.log(auth.currentUser);
-  if (auth.currentUser === null) {
-    return false;
-  } else {
-    return true;
-  }
   return auth.currentUser ? true : false;
 };
 

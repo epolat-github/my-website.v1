@@ -79,7 +79,9 @@ const signinModal = () => (
                 .then(() => {
                   document.getElementById("passSignin").value = "";
                   document.getElementById("emailSignin").value = "";
-                  window.location.reload();
+                  changeUserState();
+                  Router.push("/blog");
+                  // window.location.reload();
                 })
                 .catch(error => {
                   document.getElementById("statusSignin").innerHTML =
@@ -168,53 +170,125 @@ const registerModal = () => (
   </div>
 );
 
-const blogButtons = () => (
-  <div className="container-fluid mt-2">
-    <div className="row d-flex justify-content-end">
-      <div className="col-lg-2 col-md-2 col-6 sign-out">
-        <button
-          type="button"
-          className="btn btn-primary btn-lg"
-          data-toggle="modal"
-          data-target="#registerModal"
-        >
-          Register
-        </button>
-      </div>
-      <div className="col-lg-2 col-md-2 col-6 sign-out">
-        <button
-          type="button"
-          className="btn btn-primary btn-lg"
-          data-toggle="modal"
-          data-target="#signinModal"
-        >
-          Sign-in
-        </button>
-      </div>
-      <div className="col-lg-2 col-md-2 col-6 sign-in">
-        <Link href="/write">
-          <button type="button" className="btn btn-primary btn-lg">
-            Write
+const loginBlogButtons = () => {
+  return (
+    <div className="container-fluid mt-2">
+      <div className="row d-flex justify-content-end">
+        <div className="col-lg-2 col-md-2 col-6 sign-in">
+          <Link href="/write">
+            <button type="button" className="btn btn-primary btn-lg">
+              Write
+            </button>
+          </Link>
+        </div>
+        <div className="col-lg-2 col-md-2 col-6 sign-in">
+          <button
+            type="button"
+            className="btn btn-secondary btn-lg"
+            onClick={() => {
+              authInstance()
+                .signOut()
+                .then(() => window.location.reload())
+                .catch(() => console.log("Sign-out problem."));
+            }}
+          >
+            Sign-out
           </button>
-        </Link>
-      </div>
-      <div className="col-lg-2 col-md-2 col-6 sign-in">
-        <button
-          type="button"
-          className="btn btn-secondary btn-lg"
-          onClick={() => {
-            authInstance()
-              .signOut()
-              .then(() => window.location.reload())
-              .catch(() => console.log("Sign-out problem."));
-          }}
-        >
-          Sign-out
-        </button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
+
+const logoutBlogButtons = () => {
+  return (
+    <div className="container-fluid mt-2">
+      <div className="row d-flex justify-content-end">
+        <div className="col-lg-2 col-md-2 col-6 sign-out">
+          <button
+            type="button"
+            className="btn btn-primary btn-lg"
+            data-toggle="modal"
+            data-target="#registerModal"
+          >
+            Register
+          </button>
+        </div>
+        <div className="col-lg-2 col-md-2 col-6 sign-out">
+          <button
+            type="button"
+            className="btn btn-primary btn-lg"
+            data-toggle="modal"
+            data-target="#signinModal"
+          >
+            Sign-in
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const blogButtons = () => {
+  console.log(checkUser());
+  if (checkUser()) {
+    // if logged in
+    return loginBlogButtons();
+  } else {
+    return logoutBlogButtons();
+  }
+};
+
+// const blogButtons = () => {
+//   console.log(checkUser());
+//   return (
+//     <div className="container-fluid mt-2">
+//       <div className="row d-flex justify-content-end">
+//         <div className="col-lg-2 col-md-2 col-6 sign-out">
+//           <button
+//             type="button"
+//             className="btn btn-primary btn-lg"
+//             data-toggle="modal"
+//             data-target="#registerModal"
+//           >
+//             Register
+//           </button>
+//         </div>
+//         <div className="col-lg-2 col-md-2 col-6 sign-out">
+//           <button
+//             type="button"
+//             className="btn btn-primary btn-lg"
+//             data-toggle="modal"
+//             data-target="#signinModal"
+//           >
+//             Sign-in
+//           </button>
+//         </div>
+//         <div className="col-lg-2 col-md-2 col-6 sign-in">
+//           <Link href="/write">
+//             <button type="button" className="btn btn-primary btn-lg">
+//               Write
+//             </button>
+//           </Link>
+//         </div>
+//         <div className="col-lg-2 col-md-2 col-6 sign-in">
+//           <button
+//             type="button"
+//             className="btn btn-secondary btn-lg"
+//             onClick={() => {
+//               authInstance()
+//                 .signOut()
+//                 .then(() => window.location.reload())
+//                 .catch(() => console.log("Sign-out problem."));
+//             }}
+//           >
+//             Sign-out
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 const createCards = post => {
   return (
@@ -344,7 +418,6 @@ const Blog = ({ posts, postCount, currPage }) => (
           margin-bottom: 10%;
           transform: translateX(-40%);
         }
-
       }
     `}</style>
   </Layout>

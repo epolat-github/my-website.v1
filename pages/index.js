@@ -5,19 +5,12 @@ const Index = () => (
   <Layout>
     <article className="jumbotron bg-transparent">
       <section className="container" id="summaryText">
-        {/* <p>Erinç Polat = {"{"}</p>
-        <p>
-          Full-time: "learner", <br />
-          Part-time: "student" <br />
-        </p>
-        <p>{"}"};</p> */}
         <p className="text-left text-wrap align-middle">
           Erinç Polat = {"{"}
           <br /> Full-time: "<span className="inline">learner</span>",
           <br /> Part-time: "<span className="inline">student</span>"
         </p>
         <p className="text-right">}</p>
-        {/* <img src="/photo.png" alt="picture" /> */}
       </section>
       <div className="communication-container">
         <Communication />
