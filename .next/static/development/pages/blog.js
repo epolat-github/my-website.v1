@@ -47861,7 +47861,7 @@ function addDb(data) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!**************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fblog&absolutePagePath=%2Fhome%2Fepolat%2FDesktop%2Fprojects%2Fwebsite%2Fpages%2Fblog.js ***!
   \**************************************************************************************************************************************/
@@ -47884,5 +47884,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=blog.js.map
