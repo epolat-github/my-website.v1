@@ -20,7 +20,7 @@ const Navbar = () => (
       <div className="collapse navbar-collapse" id="navbarNav">
         <Link href="/">
           <a className="navbar-brand pl-4">
-            <img className="image-responsive" height="140px" src="/logo.png" alt="logo" />
+            <img className="image-responsive" src="/logo.png" alt="logo" />
           </a>
         </Link>
         <ul className="navbar-nav ml-auto">
@@ -77,8 +77,8 @@ const Navbar = () => (
           text-color: red;
         }
         a {
-          font-size: 30px;
-          margin-right: 20px;
+          font-size: 40px;
+          margin-right: 25px;
         }
         a:hover {
           color: #de9e73 !important;
