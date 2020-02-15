@@ -57,6 +57,7 @@ const Layout = props => (
         #background-color: rgb(10, 25, 47);
         margin: 0px;
         padding: 0px;
+        overflow-x: hidden;
       }
     `}</style>
   </div>
