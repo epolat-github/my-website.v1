@@ -83,14 +83,15 @@ const Navbar = () => (
         a:hover {
           color: #de9e73 !important;
         }
-
         @media only screen and (max-device-width: 480px) {
           .navbar-brand {
-            float: none !important;
+            display: none;
           }
-          .img-responsive {
-            margin: 0 auto !important;
-            display: block !important;
+          .nav-link {
+            font-size: 30px;
+          }
+          .navbar-nav {
+            margin-top: 10px;
           }
         }
       `}</style>

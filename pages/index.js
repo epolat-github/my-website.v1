@@ -11,13 +11,12 @@ const Index = () => (
           Part-time: "student" <br />
         </p>
         <p>{"}"};</p> */}
-
         <p className="text-left text-wrap align-middle">
           Erinç Polat = {"{"}
           <br /> Full-time: "<span className="inline">learner</span>",
           <br /> Part-time: "<span className="inline">student</span>"
-          <br /> <p className="text-right">}</p>
         </p>
+        <p className="text-right">}</p>
         {/* <img src="/photo.png" alt="picture" /> */}
       </section>
       <div className="communication-container">
@@ -35,31 +34,28 @@ const Index = () => (
         font-family: "Roboto Mono", monospace;
         //letter-spacing: 10px;
         #color: #4d4737;
-        #color: #66FCF1;
+        #color: #66fcf1;
         color: white;
         font-size: 85px;
         font-weight: bold;
-        line-height: 1.60em;
+        line-height: 1.6em;
       }
       .inline {
         #color: #ba0d00;
-        color: #D1A172;
+        color: #d1a172;
       }
-      
+
       @media only screen and (max-width: 600px) {
-        {/* #summaryText {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          margin: 5%;
-        } */}
         #summaryText p {
           font-size: 47px;
           line-height: 1.8em;
           text-align: center !important;
-        } 
+        }
         .text-right {
           margin-left: 45%;
+        }
+        .text-left {
+          margin-bottom: 0px;
         }
         .communication-container {
           visibility: hidden;
