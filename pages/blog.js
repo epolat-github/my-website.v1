@@ -233,7 +233,6 @@ const logoutBlogButtons = () => {
 };
 
 const blogButtons = () => {
-  console.log(checkUser());
   if (checkUser()) {
     // if logged in
     return loginBlogButtons();
