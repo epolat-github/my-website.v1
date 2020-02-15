@@ -60,7 +60,7 @@ const signinModal = () => (
         <div className="modal-footer">
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-secondary signin-close-button"
             data-dismiss="modal"
           >
             Close
@@ -81,6 +81,7 @@ const signinModal = () => (
                   document.getElementById("emailSignin").value = "";
                   changeUserState();
                   Router.push("/blog");
+                  document.querySelector(".signin-close-button").click();
                   // window.location.reload();
                 })
                 .catch(error => {
@@ -134,7 +135,7 @@ const registerModal = () => (
         <div className="modal-footer">
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-secondary register-close-button"
             data-dismiss="modal"
           >
             Close
@@ -152,8 +153,10 @@ const registerModal = () => (
                   console.log("Registered.");
                   document.getElementById("statusRegister").innerHTML =
                     "Registered.";
+                  Router.push("/blog");
+                  document.querySelector(".register-close-button").click();
                   // authInstance().signOut();
-                  window.location.reload();
+                  // window.location.reload();
                 })
                 .catch(function(error) {
                   console.log(error);

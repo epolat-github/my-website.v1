@@ -41,7 +41,7 @@ const Write = () => (
         <input type="text" placeholder="Blog Title" id="inputName" />
       </div>
       <div className="form-group pt-3">
-        <textarea id="inputDetail" class="form-control" rows="20"></textarea>
+        <textarea id="inputDetail" className="form-control" rows="20"></textarea>
       </div>
       <button
         type="button"
