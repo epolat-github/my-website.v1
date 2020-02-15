@@ -12,11 +12,11 @@ const Index = () => (
         </p>
         <p>{"}"};</p> */}
 
-        <p className="text-center text-wrap align-middle">
+        <p className="text-left text-wrap align-middle">
           Erinç Polat = {"{"}
           <br /> Full-time: "<span className="inline">learner</span>",
           <br /> Part-time: "<span className="inline">student</span>"
-          <br /> {"}"}
+          <br /> <p className="text-right">}</p>
         </p>
         {/* <img src="/photo.png" alt="picture" /> */}
       </section>
@@ -25,6 +25,9 @@ const Index = () => (
       </div>
     </article>
     <style jsx>{`
+      .text-right {
+        margin-right: 28%;
+      }
       #summaryText {
         margin-top: 4%;
       }
@@ -51,9 +54,13 @@ const Index = () => (
           margin: 5%;
         } */}
         #summaryText p {
-          font-size: 45px;
+          font-size: 47px;
           line-height: 1.8em;
+          text-align: center !important;
         } 
+        .text-right {
+          margin-left: 45%;
+        }
         .communication-container {
           visibility: hidden;
         }
