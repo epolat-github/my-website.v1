@@ -19,8 +19,8 @@ const Navbar = () => (
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <Link href="/">
-          <a className="navbar-brand">
-            <img src="/logo2.png" alt="logo" />
+          <a className="navbar-brand pl-4">
+            <img className="image-responsive" height="140px" src="/logo.png" alt="logo" />
           </a>
         </Link>
         <ul className="navbar-nav ml-auto">
@@ -74,7 +74,7 @@ const Navbar = () => (
       </div>
       <style jsx>{`
         .active {
-          text-color:red;
+          text-color: red;
         }
         a {
           font-size: 30px;
@@ -82,6 +82,16 @@ const Navbar = () => (
         }
         a:hover {
           color: #de9e73 !important;
+        }
+
+        @media only screen and (max-device-width: 480px) {
+          .navbar-brand {
+            float: none !important;
+          }
+          .img-responsive {
+            margin: 0 auto !important;
+            display: block !important;
+          }
         }
       `}</style>
     </nav>
