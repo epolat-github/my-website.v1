@@ -13,7 +13,7 @@ const About = () => (
               TED University
               <ul>
                 <li>
-                  Main: Computer Engineering
+                  Main Field: Computer Engineering
                 </li>
                 <li>
                   Secondary Field: General Psychology
