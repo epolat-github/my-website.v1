@@ -1,6 +1,7 @@
 import addData from "../src/dbCon";
 import { dbInstance, authInstance, checkUser } from "../src/dbCon";
 import Layout from "../components/layout";
+import fetch from "isomorphic-unfetch";
 import { useReducer } from "react";
 
 const transferData = data => {
@@ -33,7 +34,33 @@ const transferData = data => {
     });
 };
 
-const Write = () => (
+const handlePostListClick = post => {
+  // change the look
+  let activeListItems = document.querySelector(".active");
+  activeListItems ? activeListItems.classList.toggle("active") : null;
+  document.getElementById(post.slug).classList.toggle("active");
+
+  // show post
+  document.getElementById("inputName").value = post.title;
+  document.getElementById("inputDetail").value = post.details;
+};
+
+const listPosts = posts => {
+  return posts.map(post => {
+    return (
+      <button
+        key={post.slug}
+        id={post.slug}
+        onClick={() => handlePostListClick(post)}
+        className="list-group-item list-group-item-action"
+      >
+        {post.title}
+      </button>
+    );
+  });
+};
+
+const Write = ({ posts }) => (
   <Layout>
     <div className="container pt-5">
       <h1 style={{ color: "white" }}>Inspire Someone!</h1>
@@ -66,9 +93,10 @@ const Write = () => (
     </div>
 
     <div className="container post-list-container">
-        <ul id="post-list">
-          {/* TODO: post slug || başlıklardan oluşan liste => seçince edit ve delete seçenekleri. */}
-        </ul>
+      <ul id="post-list" className="list-group">
+        {/* TODO: post slug || başlıklardan oluşan liste => seçince edit ve delete seçenekleri. */}
+        {listPosts(posts)}
+      </ul>
     </div>
 
     <div id="status-container">
@@ -76,5 +104,13 @@ const Write = () => (
     </div>
   </Layout>
 );
+
+Write.getInitialProps = async () => {
+  const res = await fetch(`${process.env.baseUrl}api/posts`);
+  const data = await res.json();
+  return {
+    posts: data.posts
+  };
+};
 
 export default Write;

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2455,7 +2455,14 @@ var dateFormat = __webpack_require__(/*! dateformat */ "dateformat");
         date: dateFormat(blogInfo.blogTime, "mmmm dS, yyyy")
       };
       posts.push(blogObj);
-    });
+    }); // to get all posts (eg. post list of write page)
+
+    if (req.query.page === undefined) {
+      res.status(200).json({
+        posts: posts
+      });
+    } // Pagination purpose
+
 
     let page = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(req.query.page, 10);
 
@@ -3212,7 +3219,7 @@ function addDb(data) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /*!**********************************!*\
   !*** multi ./pages/api/posts.js ***!
   \**********************************/

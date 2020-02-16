@@ -22,6 +22,15 @@ export default (req, res) => {
         };
         posts.push(blogObj);
       });
+
+      // to get all posts (eg. post list of write page)
+      if (req.query.page === undefined) {
+        res.status(200).json({
+          posts: posts
+        });
+      }
+
+      // Pagination purpose
       let page = parseInt(req.query.page, 10);
       let firstIndex = 9 * (page - 1);
       let lastIndex = 9 * page;
