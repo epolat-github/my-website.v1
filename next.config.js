@@ -25,6 +25,6 @@ module.exports = {
     baseUrl:
       process.env.NODE_ENV === "development"
         ? "http://localhost:3000/"
-        : "http://www.erincpolat.com/"
+        : "http://erincpolat.com/"
   }
 };

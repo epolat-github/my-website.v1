@@ -1,7 +1,7 @@
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
-/******/ 	var installedModules = require('../../../ssr-module-cache.js');
+/******/ 	var installedModules = require('../../../../ssr-module-cache.js');
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2423,6 +2423,41 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
+/***/ "./pages/api/[postSlug].js":
+/*!*********************************!*\
+  !*** ./pages/api/[postSlug].js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_dbCon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../src/dbCon */ "./src/dbCon.js");
+
+
+var dateFormat = __webpack_require__(/*! dateformat */ "dateformat");
+
+/* harmony default export */ __webpack_exports__["default"] = ((req, res) => {
+  // const allPosts = postList();    //array of post obj
+  const postSlug = req.query.postSlug;
+  let firestore = Object(_src_dbCon__WEBPACK_IMPORTED_MODULE_0__["dbInstance"])();
+  firestore.collection("blogs").doc(postSlug).get().then(doc => {
+    let postSlug = doc.id;
+    let postInfo = doc.data();
+    let blogObj = {
+      title: postInfo.blogName,
+      slug: postSlug,
+      details: postInfo.blogDetail,
+      date: dateFormat(postInfo.blogTime, "mmmm dS, yyyy")
+    };
+    res.status(200).json({
+      post: blogObj
+    });
+  }).catch(error => console.log("problem getting post", error));
+});
+
+/***/ }),
+
 /***/ "./pages/blog.js":
 /*!***********************!*\
   !*** ./pages/blog.js ***!
@@ -3160,14 +3195,14 @@ function addDb(data) {
 
 /***/ }),
 
-/***/ 4:
-/*!*****************************!*\
-  !*** multi ./pages/blog.js ***!
-  \*****************************/
+/***/ 7:
+/*!***************************************!*\
+  !*** multi ./pages/api/[postSlug].js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/epolat/Desktop/projects/website/pages/blog.js */"./pages/blog.js");
+module.exports = __webpack_require__(/*! /home/epolat/Desktop/projects/website/pages/api/[postSlug].js */"./pages/api/[postSlug].js");
 
 
 /***/ }),
@@ -3290,6 +3325,17 @@ module.exports = require("core-js/library/fn/symbol/iterator");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/weak-map");
+
+/***/ }),
+
+/***/ "dateformat":
+/*!*****************************!*\
+  !*** external "dateformat" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("dateformat");
 
 /***/ }),
 
@@ -3448,4 +3494,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=blog.js.map
+//# sourceMappingURL=[postSlug].js.map

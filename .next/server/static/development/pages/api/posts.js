@@ -1,7 +1,7 @@
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
-/******/ 	var installedModules = require('../../../ssr-module-cache.js');
+/******/ 	var installedModules = require('../../../../ssr-module-cache.js');
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2423,6 +2423,58 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
+/***/ "./pages/api/posts.js":
+/*!****************************!*\
+  !*** ./pages/api/posts.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _src_dbCon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../src/dbCon */ "./src/dbCon.js");
+
+
+
+var dateFormat = __webpack_require__(/*! dateformat */ "dateformat");
+
+/* harmony default export */ __webpack_exports__["default"] = ((req, res) => {
+  // const posts = postList(); //array of post obj
+  let firestore = Object(_src_dbCon__WEBPACK_IMPORTED_MODULE_1__["dbInstance"])();
+  let posts = [];
+  firestore.collection("blogs").orderBy("blogTime", "desc").get().then(snapshot => {
+    snapshot.forEach(doc => {
+      let blogSlug = doc.id;
+      let blogInfo = doc.data();
+      let blogObj = {
+        title: blogInfo.blogName,
+        slug: blogSlug,
+        details: blogInfo.blogDetail,
+        date: dateFormat(blogInfo.blogTime, "mmmm dS, yyyy")
+      };
+      posts.push(blogObj);
+    });
+
+    let page = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(req.query.page, 10);
+
+    let firstIndex = 9 * (page - 1);
+    let lastIndex = 9 * page;
+
+    if (lastIndex > posts.length) {
+      lastIndex = posts.length;
+    }
+
+    res.status(200).json({
+      posts: posts.slice(firstIndex, lastIndex),
+      postCount: posts.length
+    });
+  }).catch(error => console.log("error on getting posts", error)); // console.log(posts);
+});
+
+/***/ }),
+
 /***/ "./pages/blog.js":
 /*!***********************!*\
   !*** ./pages/blog.js ***!
@@ -3160,14 +3212,14 @@ function addDb(data) {
 
 /***/ }),
 
-/***/ 4:
-/*!*****************************!*\
-  !*** multi ./pages/blog.js ***!
-  \*****************************/
+/***/ 5:
+/*!**********************************!*\
+  !*** multi ./pages/api/posts.js ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/epolat/Desktop/projects/website/pages/blog.js */"./pages/blog.js");
+module.exports = __webpack_require__(/*! /home/epolat/Desktop/projects/website/pages/api/posts.js */"./pages/api/posts.js");
 
 
 /***/ }),
@@ -3290,6 +3342,17 @@ module.exports = require("core-js/library/fn/symbol/iterator");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/weak-map");
+
+/***/ }),
+
+/***/ "dateformat":
+/*!*****************************!*\
+  !*** external "dateformat" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("dateformat");
 
 /***/ }),
 
@@ -3448,4 +3511,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=blog.js.map
+//# sourceMappingURL=posts.js.map

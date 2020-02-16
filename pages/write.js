@@ -41,7 +41,11 @@ const Write = () => (
         <input type="text" placeholder="Blog Title" id="inputName" />
       </div>
       <div className="form-group pt-3">
-        <textarea id="inputDetail" className="form-control" rows="20"></textarea>
+        <textarea
+          id="inputDetail"
+          className="form-control"
+          rows="20"
+        ></textarea>
       </div>
       <button
         type="button"
@@ -61,63 +65,15 @@ const Write = () => (
       </button>
     </div>
 
+    <div className="container post-list-container">
+        <ul id="post-list">
+          {/* TODO: post slug || başlıklardan oluşan liste => seçince edit ve delete seçenekleri. */}
+        </ul>
+    </div>
+
     <div id="status-container">
       <p id="status"></p>
     </div>
-    {/*<style jsx>{`
-      #status-container {
-        color: red;
-        display: inline-block;
-      }
-      h2 {
-        position: relative;
-        color: white;
-        width: 700px;
-        left: 30%;
-      }
-      h1 {
-        position: relative;
-        width: 1vh;
-        top: 200px;
-        margin: 0;
-        left: 40%;
-      }
-      input,
-      button,
-      textarea,
-      p {
-        position: relative;
-        left: 40%;
-        top: 300px;
-      }
-      textarea {
-        height: 150px;
-      }
-      #checkUserButton {
-        position: relative;
-        top: 586px;
-        left: 50%;
-      }
-      @media only screen and (max-width: 600px) {
-        h2 {
-          position: static;
-          padding-left: 4%;
-
-          width: 100vw;
-        }
-        h1 {
-          position: relative;
-          left: 10%;
-        }
-        input,
-        button,
-        textarea {
-          position: relative;
-          top: 130px;
-          left: 80px;
-        }
-      }
-    `}</style> */}
   </Layout>
 );
 

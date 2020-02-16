@@ -11,7 +11,6 @@ export default (req, res) => {
     .doc(postSlug)
     .get()
     .then(doc => {
-      console.log(doc);
       let postSlug = doc.id;
       let postInfo = doc.data();
 

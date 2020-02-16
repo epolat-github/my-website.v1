@@ -21,7 +21,8 @@ export function postList() {
         };
         array.push(blogObj);
       })
-    );
+    )
+    .catch(error => console.log("error getting blogs", error));
 
   return array;
 }

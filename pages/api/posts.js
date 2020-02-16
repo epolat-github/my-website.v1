@@ -18,7 +18,7 @@ export default (req, res) => {
           title: blogInfo.blogName,
           slug: blogSlug,
           details: blogInfo.blogDetail,
-          date: dateFormat(blogInfo.blogTime, "mmmm dS, yyyy")          
+          date: dateFormat(blogInfo.blogTime, "mmmm dS, yyyy")
         };
         posts.push(blogObj);
       });
@@ -32,6 +32,7 @@ export default (req, res) => {
         posts: posts.slice(firstIndex, lastIndex),
         postCount: posts.length
       });
-    });
+    })
+    .catch(error => console.log("error on getting posts", error));
   // console.log(posts);
 };
