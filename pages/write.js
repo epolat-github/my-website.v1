@@ -1,8 +1,7 @@
 import addData from "../src/dbCon";
-import { dbInstance, authInstance, checkUser } from "../src/dbCon";
+import { dbInstance, deletePost, authInstance, checkUser } from "../src/dbCon";
 import Layout from "../components/layout";
 import fetch from "isomorphic-unfetch";
-import { useReducer } from "react";
 
 const transferData = data => {
   const firestore = dbInstance();
@@ -43,6 +42,18 @@ const handlePostListClick = post => {
   // show post
   document.getElementById("inputName").value = post.title;
   document.getElementById("inputDetail").value = post.details;
+};
+
+const handlePostDeleteClick = () => {
+  let postTitle = document.getElementById("inputName").value;
+  let promise = deletePost(postTitle);
+
+  promise
+    .then(() => {
+      console.log("returned true");
+      location.reload();
+    })
+    .catch(() => console.log("returned false"));
 };
 
 const listPosts = posts => {
@@ -89,6 +100,13 @@ const Write = ({ posts }) => (
         }}
       >
         Post
+      </button>
+      <button
+        type="button"
+        className="btn btn-lg btn-secondary mt-3 ml-3"
+        onClick={() => handlePostDeleteClick()}
+      >
+        Delete
       </button>
     </div>
 

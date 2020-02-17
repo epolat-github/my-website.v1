@@ -47845,7 +47845,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
-
 var transferData = function transferData(data) {
   var firestore = Object(_src_dbCon__WEBPACK_IMPORTED_MODULE_3__["dbInstance"])();
   var slug = data.blogSlug;
@@ -47868,7 +47867,7 @@ var transferData = function transferData(data) {
     document.querySelector("p").innerHTML = __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 28
       },
       __self: this
     }, "`slug: $", slug, ",`") + "name: ".concat(name, " created.");
@@ -47888,6 +47887,17 @@ var handlePostListClick = function handlePostListClick(post) {
   document.getElementById("inputDetail").value = post.details;
 };
 
+var handlePostDeleteClick = function handlePostDeleteClick() {
+  var postTitle = document.getElementById("inputName").value;
+  var promise = Object(_src_dbCon__WEBPACK_IMPORTED_MODULE_3__["deletePost"])(postTitle);
+  promise.then(function () {
+    console.log("returned true");
+    location.reload();
+  })["catch"](function () {
+    return console.log("returned false");
+  });
+};
+
 var listPosts = function listPosts(posts) {
   return posts.map(function (post) {
     return __jsx("button", {
@@ -47899,7 +47909,7 @@ var listPosts = function listPosts(posts) {
       className: "list-group-item list-group-item-action",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 62
       },
       __self: this
     }, post.title);
@@ -47911,14 +47921,14 @@ var Write = function Write(_ref) {
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 75
     },
     __self: this
   }, __jsx("div", {
     className: "container pt-5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 76
     },
     __self: this
   }, __jsx("h1", {
@@ -47927,14 +47937,14 @@ var Write = function Write(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 77
     },
     __self: this
   }, "Inspire Someone!"), __jsx("div", {
     className: "form-group pt-3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 78
     },
     __self: this
   }, __jsx("input", {
@@ -47943,14 +47953,14 @@ var Write = function Write(_ref) {
     id: "inputName",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 79
     },
     __self: this
   })), __jsx("div", {
     className: "form-group pt-3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 81
     },
     __self: this
   }, __jsx("textarea", {
@@ -47959,7 +47969,7 @@ var Write = function Write(_ref) {
     rows: "20",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 82
     },
     __self: this
   })), __jsx("button", {
@@ -47974,14 +47984,25 @@ var Write = function Write(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 88
     },
     __self: this
-  }, "Post")), __jsx("div", {
+  }, "Post"), __jsx("button", {
+    type: "button",
+    className: "btn btn-lg btn-secondary mt-3 ml-3",
+    onClick: function onClick() {
+      return handlePostDeleteClick();
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104
+    },
+    __self: this
+  }, "Delete")), __jsx("div", {
     className: "container post-list-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 113
     },
     __self: this
   }, __jsx("ul", {
@@ -47989,21 +48010,21 @@ var Write = function Write(_ref) {
     className: "list-group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 114
     },
     __self: this
   }, listPosts(posts))), __jsx("div", {
     id: "status-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 120
     },
     __self: this
   }, __jsx("p", {
     id: "status",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 121
     },
     __self: this
   })));
@@ -48045,7 +48066,7 @@ Write.getInitialProps = function _callee() {
 /*!**********************!*\
   !*** ./src/dbCon.js ***!
   \**********************/
-/*! exports provided: authInstance, dbInstance, checkUser, currentUser, default */
+/*! exports provided: authInstance, dbInstance, checkUser, currentUser, default, deletePost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48055,7 +48076,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkUser", function() { return checkUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "currentUser", function() { return currentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addDb; });
-/* harmony import */ var _pages_blog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/blog */ "./pages/blog.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pages_blog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/blog */ "./pages/blog.js");
+
+
 // import { navbarModifier } from "../components/navbar";
 
 
@@ -48107,7 +48135,7 @@ var checkUser = function checkUser() {
 };
 var currentUser;
 auth.onAuthStateChanged(function (user) {
-  Object(_pages_blog__WEBPACK_IMPORTED_MODULE_0__["changeUserState"])(user);
+  Object(_pages_blog__WEBPACK_IMPORTED_MODULE_2__["changeUserState"])(user);
 }); //TODO: registerdaki ve signindeki fonkları buraya taşı
 // add blog posts to database
 
@@ -48122,10 +48150,37 @@ function addDb(data) {
     return console.log("Got an error:" + error);
   });
 }
+var deletePost = function deletePost(postTitle) {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function deletePost$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          return _context.abrupt("return", new _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_1___default.a(function (resolve, reject) {
+            var query = firestore.collection("blogs").where("blogName", "==", postTitle);
+            query.get().then(function (snapshot) {
+              snapshot.forEach(function (doc) {
+                doc.ref["delete"]().then(function () {
+                  console.log("Delete successful!");
+                  resolve(true);
+                })["catch"](function () {
+                  console.log("Delete unsuccessful!");
+                  resolve(false);
+                });
+              });
+            });
+          }));
+
+        case 1:
+        case "end":
+          return _context.stop();
+      }
+    }
+  });
+};
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fwrite&absolutePagePath=%2Fhome%2Fepolat%2FDesktop%2Fprojects%2Fwebsite%2Fpages%2Fwrite.js ***!
   \****************************************************************************************************************************************/
@@ -48148,5 +48203,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=write.js.map

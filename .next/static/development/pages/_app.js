@@ -48270,7 +48270,7 @@ Blog.getInitialProps = function _callee(_ref2) {
 /*!**********************!*\
   !*** ./src/dbCon.js ***!
   \**********************/
-/*! exports provided: authInstance, dbInstance, checkUser, currentUser, default */
+/*! exports provided: authInstance, dbInstance, checkUser, currentUser, default, deletePost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48280,7 +48280,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkUser", function() { return checkUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "currentUser", function() { return currentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addDb; });
-/* harmony import */ var _pages_blog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/blog */ "./pages/blog.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pages_blog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/blog */ "./pages/blog.js");
+
+
 // import { navbarModifier } from "../components/navbar";
 
 
@@ -48332,7 +48339,7 @@ var checkUser = function checkUser() {
 };
 var currentUser;
 auth.onAuthStateChanged(function (user) {
-  Object(_pages_blog__WEBPACK_IMPORTED_MODULE_0__["changeUserState"])(user);
+  Object(_pages_blog__WEBPACK_IMPORTED_MODULE_2__["changeUserState"])(user);
 }); //TODO: registerdaki ve signindeki fonkları buraya taşı
 // add blog posts to database
 
@@ -48347,6 +48354,33 @@ function addDb(data) {
     return console.log("Got an error:" + error);
   });
 }
+var deletePost = function deletePost(postTitle) {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function deletePost$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          return _context.abrupt("return", new _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_1___default.a(function (resolve, reject) {
+            var query = firestore.collection("blogs").where("blogName", "==", postTitle);
+            query.get().then(function (snapshot) {
+              snapshot.forEach(function (doc) {
+                doc.ref["delete"]().then(function () {
+                  console.log("Delete successful!");
+                  resolve(true);
+                })["catch"](function () {
+                  console.log("Delete unsuccessful!");
+                  resolve(false);
+                });
+              });
+            });
+          }));
+
+        case 1:
+        case "end":
+          return _context.stop();
+      }
+    }
+  });
+};
 
 /***/ }),
 

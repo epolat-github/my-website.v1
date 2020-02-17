@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -3121,7 +3121,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-
 const transferData = data => {
   const firestore = Object(_src_dbCon__WEBPACK_IMPORTED_MODULE_2__["dbInstance"])();
   let slug = data.blogSlug;
@@ -3144,7 +3143,7 @@ const transferData = data => {
     document.querySelector("p").innerHTML = __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 28
       },
       __self: undefined
     }, "`slug: $", slug, ",`") + `name: ${name} created.`;
@@ -3164,6 +3163,15 @@ const handlePostListClick = post => {
   document.getElementById("inputDetail").value = post.details;
 };
 
+const handlePostDeleteClick = () => {
+  let postTitle = document.getElementById("inputName").value;
+  let promise = Object(_src_dbCon__WEBPACK_IMPORTED_MODULE_2__["deletePost"])(postTitle);
+  promise.then(() => {
+    console.log("returned true");
+    location.reload();
+  }).catch(() => console.log("returned false"));
+};
+
 const listPosts = posts => {
   return posts.map(post => {
     return __jsx("button", {
@@ -3173,7 +3181,7 @@ const listPosts = posts => {
       className: "list-group-item list-group-item-action",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 62
       },
       __self: undefined
     }, post.title);
@@ -3185,14 +3193,14 @@ const Write = ({
 }) => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 64
+    lineNumber: 75
   },
   __self: undefined
 }, __jsx("div", {
   className: "container pt-5",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 65
+    lineNumber: 76
   },
   __self: undefined
 }, __jsx("h1", {
@@ -3201,14 +3209,14 @@ const Write = ({
   },
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 66
+    lineNumber: 77
   },
   __self: undefined
 }, "Inspire Someone!"), __jsx("div", {
   className: "form-group pt-3",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 67
+    lineNumber: 78
   },
   __self: undefined
 }, __jsx("input", {
@@ -3217,14 +3225,14 @@ const Write = ({
   id: "inputName",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 68
+    lineNumber: 79
   },
   __self: undefined
 })), __jsx("div", {
   className: "form-group pt-3",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 70
+    lineNumber: 81
   },
   __self: undefined
 }, __jsx("textarea", {
@@ -3233,7 +3241,7 @@ const Write = ({
   rows: "20",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 71
+    lineNumber: 82
   },
   __self: undefined
 })), __jsx("button", {
@@ -3248,14 +3256,23 @@ const Write = ({
   },
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 77
+    lineNumber: 88
   },
   __self: undefined
-}, "Post")), __jsx("div", {
+}, "Post"), __jsx("button", {
+  type: "button",
+  className: "btn btn-lg btn-secondary mt-3 ml-3",
+  onClick: () => handlePostDeleteClick(),
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 104
+  },
+  __self: undefined
+}, "Delete")), __jsx("div", {
   className: "container post-list-container",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 95
+    lineNumber: 113
   },
   __self: undefined
 }, __jsx("ul", {
@@ -3263,21 +3280,21 @@ const Write = ({
   className: "list-group",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 96
+    lineNumber: 114
   },
   __self: undefined
 }, listPosts(posts))), __jsx("div", {
   id: "status-container",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 102
+    lineNumber: 120
   },
   __self: undefined
 }, __jsx("p", {
   id: "status",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 103
+    lineNumber: 121
   },
   __self: undefined
 })));
@@ -3298,7 +3315,7 @@ Write.getInitialProps = async () => {
 /*!**********************!*\
   !*** ./src/dbCon.js ***!
   \**********************/
-/*! exports provided: authInstance, dbInstance, checkUser, currentUser, default */
+/*! exports provided: authInstance, dbInstance, checkUser, currentUser, default, deletePost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3308,7 +3325,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkUser", function() { return checkUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "currentUser", function() { return currentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addDb; });
-/* harmony import */ var _pages_blog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/blog */ "./pages/blog.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _pages_blog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/blog */ "./pages/blog.js");
+
 // import { navbarModifier } from "../components/navbar";
 
 
@@ -3356,7 +3377,7 @@ const checkUser = () => {
 };
 var currentUser;
 auth.onAuthStateChanged(user => {
-  Object(_pages_blog__WEBPACK_IMPORTED_MODULE_0__["changeUserState"])(user);
+  Object(_pages_blog__WEBPACK_IMPORTED_MODULE_1__["changeUserState"])(user);
 }); //TODO: registerdaki ve signindeki fonkları buraya taşı
 // add blog posts to database
 
@@ -3367,10 +3388,26 @@ function addDb(data) {
     blogDetail: data.blogDetail
   }).then(() => console.log("Saved")).catch(error => console.log("Got an error:" + error));
 }
+const deletePost = async postTitle => {
+  return new _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a((resolve, reject) => {
+    const query = firestore.collection("blogs").where("blogName", "==", postTitle);
+    query.get().then(snapshot => {
+      snapshot.forEach(doc => {
+        doc.ref.delete().then(() => {
+          console.log("Delete successful!");
+          resolve(true);
+        }).catch(() => {
+          console.log("Delete unsuccessful!");
+          resolve(false);
+        });
+      });
+    });
+  });
+};
 
 /***/ }),
 
-/***/ 7:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/write.js ***!
   \******************************/

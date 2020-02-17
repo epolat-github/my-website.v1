@@ -3170,7 +3170,7 @@ Blog.getInitialProps = async ({
 /*!**********************!*\
   !*** ./src/dbCon.js ***!
   \**********************/
-/*! exports provided: authInstance, dbInstance, checkUser, currentUser, default */
+/*! exports provided: authInstance, dbInstance, checkUser, currentUser, default, deletePost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3180,7 +3180,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkUser", function() { return checkUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "currentUser", function() { return currentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addDb; });
-/* harmony import */ var _pages_blog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/blog */ "./pages/blog.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _pages_blog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/blog */ "./pages/blog.js");
+
 // import { navbarModifier } from "../components/navbar";
 
 
@@ -3228,7 +3232,7 @@ const checkUser = () => {
 };
 var currentUser;
 auth.onAuthStateChanged(user => {
-  Object(_pages_blog__WEBPACK_IMPORTED_MODULE_0__["changeUserState"])(user);
+  Object(_pages_blog__WEBPACK_IMPORTED_MODULE_1__["changeUserState"])(user);
 }); //TODO: registerdaki ve signindeki fonkları buraya taşı
 // add blog posts to database
 
@@ -3239,6 +3243,22 @@ function addDb(data) {
     blogDetail: data.blogDetail
   }).then(() => console.log("Saved")).catch(error => console.log("Got an error:" + error));
 }
+const deletePost = async postTitle => {
+  return new _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a((resolve, reject) => {
+    const query = firestore.collection("blogs").where("blogName", "==", postTitle);
+    query.get().then(snapshot => {
+      snapshot.forEach(doc => {
+        doc.ref.delete().then(() => {
+          console.log("Delete successful!");
+          resolve(true);
+        }).catch(() => {
+          console.log("Delete unsuccessful!");
+          resolve(false);
+        });
+      });
+    });
+  });
+};
 
 /***/ }),
 

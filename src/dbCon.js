@@ -67,3 +67,27 @@ export default function addDb(data) {
     .then(() => console.log("Saved"))
     .catch(error => console.log("Got an error:" + error));
 }
+
+export const deletePost = async postTitle => {
+  return new Promise((resolve, reject) => {
+    const query = firestore
+      .collection("blogs")
+      .where("blogName", "==", postTitle);
+
+    query.get().then(snapshot => {
+      snapshot.forEach(doc => {
+        doc.ref
+          .delete()
+          .then(() => {
+            console.log("Delete successful!");
+            resolve(true);
+          })
+          .catch(() => {
+            console.log("Delete unsuccessful!");
+            resolve(false);
+          });
+      });
+    });
+  });
+};
+
