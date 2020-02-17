@@ -3140,13 +3140,7 @@ const transferData = data => {
   const docRef = firestore.collection("blogs").doc(data.blogSlug);
   docRef.set(post).then(() => {
     console.log("Saved");
-    document.querySelector("p").innerHTML = __jsx("strong", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 28
-      },
-      __self: undefined
-    }, "`slug: $", slug, ",`") + `name: ${name} created.`;
+    location.reload();
   }).catch(error => {
     console.log("Got an error:" + error);
     document.getElementById("status").innerHTML = `${error.message}`;
@@ -3181,7 +3175,7 @@ const listPosts = posts => {
       className: "list-group-item list-group-item-action",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 61
       },
       __self: undefined
     }, post.title);
@@ -3193,14 +3187,14 @@ const Write = ({
 }) => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 75
+    lineNumber: 74
   },
   __self: undefined
 }, __jsx("div", {
   className: "container pt-5",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 76
+    lineNumber: 75
   },
   __self: undefined
 }, __jsx("h1", {
@@ -3209,14 +3203,14 @@ const Write = ({
   },
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 77
+    lineNumber: 76
   },
   __self: undefined
 }, "Inspire Someone!"), __jsx("div", {
   className: "form-group pt-3",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 78
+    lineNumber: 77
   },
   __self: undefined
 }, __jsx("input", {
@@ -3225,14 +3219,14 @@ const Write = ({
   id: "inputName",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 79
+    lineNumber: 78
   },
   __self: undefined
 })), __jsx("div", {
   className: "form-group pt-3",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 81
+    lineNumber: 80
   },
   __self: undefined
 }, __jsx("textarea", {
@@ -3241,7 +3235,7 @@ const Write = ({
   rows: "20",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 82
+    lineNumber: 81
   },
   __self: undefined
 })), __jsx("button", {
@@ -3256,7 +3250,7 @@ const Write = ({
   },
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 88
+    lineNumber: 87
   },
   __self: undefined
 }, "Post"), __jsx("button", {
@@ -3265,14 +3259,14 @@ const Write = ({
   onClick: () => handlePostDeleteClick(),
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 104
+    lineNumber: 103
   },
   __self: undefined
 }, "Delete")), __jsx("div", {
   className: "container post-list-container",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 113
+    lineNumber: 112
   },
   __self: undefined
 }, __jsx("ul", {
@@ -3280,21 +3274,21 @@ const Write = ({
   className: "list-group",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 114
+    lineNumber: 113
   },
   __self: undefined
 }, listPosts(posts))), __jsx("div", {
   id: "status-container",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 120
+    lineNumber: 119
   },
   __self: undefined
 }, __jsx("p", {
   id: "status",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 121
+    lineNumber: 120
   },
   __self: undefined
 })));

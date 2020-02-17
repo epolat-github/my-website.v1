@@ -24,8 +24,7 @@ const transferData = data => {
     .set(post)
     .then(() => {
       console.log("Saved");
-      document.querySelector("p").innerHTML =
-        <strong>`slug: ${slug},`</strong> + `name: ${name} created.`;
+      location.reload();
     })
     .catch(error => {
       console.log("Got an error:" + error);
