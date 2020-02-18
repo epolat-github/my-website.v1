@@ -178,7 +178,7 @@ const loginBlogButtons = () => {
     <div className="container-fluid mt-2">
       <div className="row d-flex justify-content-end">
         <div className="col-lg-2 col-md-2 col-6 sign-in">
-          <Link href="/write">
+          <Link href="/admin">
             <button type="button" className="btn btn-primary btn-lg">
               Write
             </button>

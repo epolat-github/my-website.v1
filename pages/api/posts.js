@@ -28,20 +28,19 @@ export default (req, res) => {
         res.status(200).json({
           posts: posts
         });
+      } else {
+        // Pagination purpose
+        let page = parseInt(req.query.page, 10);
+        let firstIndex = 9 * (page - 1);
+        let lastIndex = 9 * page;
+        if (lastIndex > posts.length) {
+          lastIndex = posts.length;
+        }
+        res.status(200).json({
+          posts: posts.slice(firstIndex, lastIndex),
+          postCount: posts.length
+        });
       }
-
-      // Pagination purpose
-      let page = parseInt(req.query.page, 10);
-      let firstIndex = 9 * (page - 1);
-      let lastIndex = 9 * page;
-      if (lastIndex > posts.length) {
-        lastIndex = posts.length;
-      }
-      res.status(200).json({
-        posts: posts.slice(firstIndex, lastIndex),
-        postCount: posts.length
-      });
     })
     .catch(error => console.log("error on getting posts", error));
-  // console.log(posts);
 };
