@@ -47108,7 +47108,7 @@ var About = function About() {
     },
     __self: this
   }, __jsx("div", {
-    className: "jsx-2501232407" + " " + "col-lg-6 col-sm-12",
+    className: "jsx-2501232407" + " " + "col-lg-6 col-sm-12 mt-5 pl-5",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
@@ -47162,21 +47162,21 @@ var About = function About() {
     className: "jsx-2501232407",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 16
     },
     __self: this
   }, "Secondary Field: General Psychology"))), __jsx("li", {
     className: "jsx-2501232407",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 19
     },
     __self: this
   }, "3", __jsx("sup", {
     className: "jsx-2501232407",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 20
     },
     __self: this
   }, "rd"), " grade")), __jsx("p", {
@@ -47184,13 +47184,13 @@ var About = function About() {
     className: "jsx-2501232407" + " " + "text-left",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 23
     },
     __self: this
   }, "I believe that not wasting time and producing solutions to real problems are the keys to the success.")))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "2501232407",
     __self: this
-  }, "#about-text-container.jsx-2501232407{padding-top:150px;}li.jsx-2501232407{font-size:30px;color:white;}#about-text.jsx-2501232407{color:white;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Vwb2xhdC9EZXNrdG9wL3Byb2plY3RzL3dlYnNpdGUvcGFnZXMvYWJvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBa0NnQixBQUcyQixBQUdILEFBSUgsWUFDZCxHQUpjLEdBSGQsU0FJQSIsImZpbGUiOiIvaG9tZS9lcG9sYXQvRGVza3RvcC9wcm9qZWN0cy93ZWJzaXRlL3BhZ2VzL2Fib3V0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IExheW91dCBmcm9tIFwiLi4vY29tcG9uZW50cy9sYXlvdXRcIjtcblxuY29uc3QgQWJvdXQgPSAoKSA9PiAoXG4gIDxMYXlvdXQ+XG4gICAgPGFydGljbGUgY2xhc3NOYW1lPVwiY29udGFpbmVyLWZsdWlkXCI+XG4gICAgICA8c2VjdGlvbiBjbGFzc05hbWU9XCJyb3dcIj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjb2wtbGctNiBjb2wtc20tMTJcIj5cbiAgICAgICAgICA8aW1nIHNyYz1cIi9waG90by5wbmdcIiBjbGFzc05hbWU9XCJpbWctZmx1aWRcIj48L2ltZz5cbiAgICAgICAgPC9kaXY+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY29sLWxnLTZcIiBpZD1cImFib3V0LXRleHQtY29udGFpbmVyXCI+XG4gICAgICAgICAgPHVsPlxuICAgICAgICAgICAgPGxpPlxuICAgICAgICAgICAgICBURUQgVW5pdmVyc2l0eVxuICAgICAgICAgICAgICA8dWw+XG4gICAgICAgICAgICAgICAgPGxpPlxuICAgICAgICAgICAgICAgICAgTWFpbiBGaWVsZDogQ29tcHV0ZXIgRW5naW5lZXJpbmdcbiAgICAgICAgICAgICAgICA8L2xpPlxuICAgICAgICAgICAgICAgIDxsaT5cbiAgICAgICAgICAgICAgICAgIFNlY29uZGFyeSBGaWVsZDogR2VuZXJhbCBQc3ljaG9sb2d5XG4gICAgICAgICAgICAgICAgPC9saT5cbiAgICAgICAgICAgICAgPC91bD5cbiAgICAgICAgICAgIDwvbGk+XG4gICAgICAgICAgICA8bGk+XG4gICAgICAgICAgICAgIDM8c3VwPnJkPC9zdXA+IGdyYWRlXG4gICAgICAgICAgICA8L2xpPlxuXG4gICAgICAgICAgPC91bD5cbiAgICAgICAgICA8cCBjbGFzc05hbWU9XCJ0ZXh0LWxlZnRcIiBpZD1cImFib3V0LXRleHRcIj5cbiAgICAgICAgICAgIEkgYmVsaWV2ZSB0aGF0IG5vdCB3YXN0aW5nIHRpbWUgYW5kIHByb2R1Y2luZyBzb2x1dGlvbnMgdG9cbiAgICAgICAgICAgIHJlYWwgcHJvYmxlbXMgYXJlIHRoZSBrZXlzIHRvIHRoZSBzdWNjZXNzLlxuICAgICAgICAgIDwvcD5cbiAgICAgICAgPC9kaXY+XG4gICAgICA8L3NlY3Rpb24+XG4gICAgPC9hcnRpY2xlPlxuICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgICNhYm91dC10ZXh0LWNvbnRhaW5lciB7XG4gICAgICAgIHBhZGRpbmctdG9wOiAxNTBweDtcbiAgICAgIH1cbiAgICAgIGxpIHtcbiAgICAgICAgZm9udC1zaXplOiAzMHB4O1xuICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICB9XG4gICAgICAjYWJvdXQtdGV4dCB7XG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICAgIH1cbiAgICBgfTwvc3R5bGU+XG4gIDwvTGF5b3V0PlxuKTtcblxuZXhwb3J0IGRlZmF1bHQgQWJvdXQ7XG4iXX0= */\n/*@ sourceURL=/home/epolat/Desktop/projects/website/pages/about.js */"));
+  }, "#about-text-container.jsx-2501232407{padding-top:150px;}li.jsx-2501232407{font-size:30px;color:white;}#about-text.jsx-2501232407{color:white;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Vwb2xhdC9EZXNrdG9wL3Byb2plY3RzL3dlYnNpdGUvcGFnZXMvYWJvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBNkJnQixBQUcyQixBQUdILEFBSUgsWUFDZCxHQUpjLEdBSGQsU0FJQSIsImZpbGUiOiIvaG9tZS9lcG9sYXQvRGVza3RvcC9wcm9qZWN0cy93ZWJzaXRlL3BhZ2VzL2Fib3V0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IExheW91dCBmcm9tIFwiLi4vY29tcG9uZW50cy9sYXlvdXRcIjtcblxuY29uc3QgQWJvdXQgPSAoKSA9PiAoXG4gIDxMYXlvdXQ+XG4gICAgPGFydGljbGUgY2xhc3NOYW1lPVwiY29udGFpbmVyLWZsdWlkXCI+XG4gICAgICA8c2VjdGlvbiBjbGFzc05hbWU9XCJyb3dcIj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjb2wtbGctNiBjb2wtc20tMTIgbXQtNSBwbC01XCI+XG4gICAgICAgICAgPGltZyBzcmM9XCIvcGhvdG8ucG5nXCIgY2xhc3NOYW1lPVwiaW1nLWZsdWlkXCI+PC9pbWc+XG4gICAgICAgIDwvZGl2PlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImNvbC1sZy02XCIgaWQ9XCJhYm91dC10ZXh0LWNvbnRhaW5lclwiPlxuICAgICAgICAgIDx1bD5cbiAgICAgICAgICAgIDxsaT5cbiAgICAgICAgICAgICAgVEVEIFVuaXZlcnNpdHlcbiAgICAgICAgICAgICAgPHVsPlxuICAgICAgICAgICAgICAgIDxsaT5NYWluIEZpZWxkOiBDb21wdXRlciBFbmdpbmVlcmluZzwvbGk+XG4gICAgICAgICAgICAgICAgPGxpPlNlY29uZGFyeSBGaWVsZDogR2VuZXJhbCBQc3ljaG9sb2d5PC9saT5cbiAgICAgICAgICAgICAgPC91bD5cbiAgICAgICAgICAgIDwvbGk+XG4gICAgICAgICAgICA8bGk+XG4gICAgICAgICAgICAgIDM8c3VwPnJkPC9zdXA+IGdyYWRlXG4gICAgICAgICAgICA8L2xpPlxuICAgICAgICAgIDwvdWw+XG4gICAgICAgICAgPHAgY2xhc3NOYW1lPVwidGV4dC1sZWZ0XCIgaWQ9XCJhYm91dC10ZXh0XCI+XG4gICAgICAgICAgICBJIGJlbGlldmUgdGhhdCBub3Qgd2FzdGluZyB0aW1lIGFuZCBwcm9kdWNpbmcgc29sdXRpb25zIHRvIHJlYWxcbiAgICAgICAgICAgIHByb2JsZW1zIGFyZSB0aGUga2V5cyB0byB0aGUgc3VjY2Vzcy5cbiAgICAgICAgICA8L3A+XG4gICAgICAgIDwvZGl2PlxuICAgICAgPC9zZWN0aW9uPlxuICAgIDwvYXJ0aWNsZT5cbiAgICA8c3R5bGUganN4PntgXG4gICAgICAjYWJvdXQtdGV4dC1jb250YWluZXIge1xuICAgICAgICBwYWRkaW5nLXRvcDogMTUwcHg7XG4gICAgICB9XG4gICAgICBsaSB7XG4gICAgICAgIGZvbnQtc2l6ZTogMzBweDtcbiAgICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgfVxuICAgICAgI2Fib3V0LXRleHQge1xuICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICB9XG4gICAgYH08L3N0eWxlPlxuICA8L0xheW91dD5cbik7XG5cbmV4cG9ydCBkZWZhdWx0IEFib3V0O1xuIl19 */\n/*@ sourceURL=/home/epolat/Desktop/projects/website/pages/about.js */"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (About);
@@ -48025,7 +48025,7 @@ var deletePost = function deletePost(postTitle) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fabout&absolutePagePath=%2Fhome%2Fepolat%2FDesktop%2Fprojects%2Fwebsite%2Fpages%2Fabout.js ***!
   \****************************************************************************************************************************************/
@@ -48048,5 +48048,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=about.js.map

@@ -26,11 +26,11 @@ const transferData = data => {
   docRef
     .set(post)
     .then(() => {
-      console.log("Saved");
+      alert("Saved!");
       location.reload();
     })
     .catch(error => {
-      console.log("Got an error:" + error);
+      alert(error.message);
       document.getElementById("status").innerHTML = `${error.message}`;
     });
 };
@@ -119,7 +119,6 @@ const Write = ({ posts }) => (
       <div className="container post-list-container mt-4 mb-5">
         <h1>Post List</h1>
         <ul id="post-list" className="list-group mt-3">
-          {/* TODO: post slug || başlıklardan oluşan liste => seçince edit ve delete seçenekleri. */}
           {listPosts(posts)}
         </ul>
       </div>
