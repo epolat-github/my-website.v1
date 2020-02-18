@@ -78,63 +78,64 @@ const listPosts = posts => {
 
 const Write = ({ posts }) => (
   <Layout>
-    <div className="container pt-5">
-      <h1>Inspire Someone!</h1>
-      <div className="form-group pt-3">
-        <input type="text" placeholder="Blog Title" id="inputName" />
+    <article className="jumpotron">
+      <div className="container pt-5">
+        <h1>Inspire Someone!</h1>
+        <div className="form-group pt-3">
+          <input type="text" placeholder="Blog Title" id="inputName" />
+        </div>
+        <div className="form-group pt-3">
+          <textarea
+            id="inputDetail"
+            className="form-control"
+            rows="20"
+          ></textarea>
+        </div>
+        <button
+          type="button"
+          className="btn btn-lg btn-primary mt-3"
+          onClick={() => {
+            transferData({
+              blogSlug: document
+                .getElementById("inputName")
+                .value.replace(/\s+/g, "-")
+                .replace(/ı/g, "i")
+                .toLowerCase(),
+              blogName: document.getElementById("inputName").value,
+              blogDetail: document.getElementById("inputDetail").value
+            });
+          }}
+        >
+          Post
+        </button>
+        <button
+          type="button"
+          className="btn btn-lg btn-secondary mt-3 ml-3"
+          onClick={() => handlePostDeleteClick()}
+        >
+          Delete
+        </button>
       </div>
-      <div className="form-group pt-3">
-        <textarea
-          id="inputDetail"
-          className="form-control"
-          rows="20"
-        ></textarea>
+      <div className="container post-list-container mt-4 mb-5">
+        <h1>Post List</h1>
+        <ul id="post-list" className="list-group mt-3">
+          {/* TODO: post slug || başlıklardan oluşan liste => seçince edit ve delete seçenekleri. */}
+          {listPosts(posts)}
+        </ul>
       </div>
-      <button
-        type="button"
-        className="btn btn-lg btn-primary mt-3"
-        onClick={() => {
-          transferData({
-            blogSlug: document
-              .getElementById("inputName")
-              .value.replace(/\s+/g, "-")
-              .replace(/ı/g, "i")
-              .toLowerCase(),
-            blogName: document.getElementById("inputName").value,
-            blogDetail: document.getElementById("inputDetail").value
-          });
-        }}
-      >
-        Post
-      </button>
-      <button
-        type="button"
-        className="btn btn-lg btn-secondary mt-3 ml-3"
-        onClick={() => handlePostDeleteClick()}
-      >
-        Delete
-      </button>
-    </div>
 
-    <div className="container post-list-container mt-5">
-      <h1>Post List</h1>
-      <ul id="post-list" className="list-group mt-3">
-        {/* TODO: post slug || başlıklardan oluşan liste => seçince edit ve delete seçenekleri. */}
-        {listPosts(posts)}
-      </ul>
-    </div>
-
-    <div id="status-container">
-      <p id="status"></p>
-    </div>
-    <style jsx>{`
-      h1 {
-        color: #d1a172;
-        text-align: center;
-        font-weight: 800;
-        text-transform: uppercase;
-      }
-    `}</style>
+      <div id="status-container">
+        <p id="status"></p>
+      </div>
+      <style jsx>{`
+        h1 {
+          color: #d1a172;
+          text-align: center;
+          font-weight: 800;
+          text-transform: uppercase;
+        }
+      `}</style>
+    </article>
   </Layout>
 );
 
