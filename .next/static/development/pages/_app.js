@@ -48364,10 +48364,9 @@ var deletePost = function deletePost(postTitle) {
             query.get().then(function (snapshot) {
               snapshot.forEach(function (doc) {
                 doc.ref["delete"]().then(function () {
-                  console.log("Delete successful!");
                   resolve(true);
-                })["catch"](function () {
-                  console.log("Delete unsuccessful!");
+                })["catch"](function (error) {
+                  console.log("Delete error: ", error);
                   resolve(false);
                 });
               });

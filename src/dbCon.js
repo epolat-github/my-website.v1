@@ -79,15 +79,13 @@ export const deletePost = async postTitle => {
         doc.ref
           .delete()
           .then(() => {
-            console.log("Delete successful!");
             resolve(true);
           })
-          .catch(() => {
-            console.log("Delete unsuccessful!");
+          .catch((error) => {
+            console.log("Delete error: ", error);
             resolve(false);
           });
       });
     });
   });
 };
-

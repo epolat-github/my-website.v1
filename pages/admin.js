@@ -4,6 +4,9 @@ import Layout from "../components/layout";
 import fetch from "isomorphic-unfetch";
 
 const transferData = data => {
+  if (!confirm("Are you sure?")) {
+    return;
+  }
   const firestore = dbInstance();
 
   let slug = data.blogSlug;
@@ -48,14 +51,14 @@ const handlePostDeleteClick = () => {
     return;
   }
   let postTitle = document.getElementById("inputName").value;
-  let promise = deletePost(postTitle);
+  let result = deletePost(postTitle);
 
-  promise
+  result
     .then(() => {
-      console.log("returned true");
+      alert("Deleted!");
       location.reload();
     })
-    .catch(() => console.log("returned false"));
+    .catch(() => alert("Could not deleted."));
 };
 
 const listPosts = posts => {
@@ -124,13 +127,13 @@ const Write = ({ posts }) => (
     <div id="status-container">
       <p id="status"></p>
     </div>
-  <style jsx>{`
-        h1 {
-          color: #D1A172;
-          text-align: center;
-          font-weight: 800;
-          text-transform: uppercase;
-        }
+    <style jsx>{`
+      h1 {
+        color: #d1a172;
+        text-align: center;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
     `}</style>
   </Layout>
 );

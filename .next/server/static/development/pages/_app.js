@@ -3249,10 +3249,9 @@ const deletePost = async postTitle => {
     query.get().then(snapshot => {
       snapshot.forEach(doc => {
         doc.ref.delete().then(() => {
-          console.log("Delete successful!");
           resolve(true);
-        }).catch(() => {
-          console.log("Delete unsuccessful!");
+        }).catch(error => {
+          console.log("Delete error: ", error);
           resolve(false);
         });
       });
