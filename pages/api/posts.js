@@ -1,7 +1,10 @@
 import { dbInstance } from "../../src/dbCon";
+import Cors from "micro-cors";
 var dateFormat = require("dateformat");
 
-export default (req, res) => {
+const cors = Cors();
+
+function handler(req, res) {
   // const posts = postList(); //array of post obj
   let firestore = dbInstance();
   let posts = [];
@@ -43,4 +46,6 @@ export default (req, res) => {
       }
     })
     .catch(error => console.log("error on getting posts", error));
-};
+}
+
+export default cors(handler);
