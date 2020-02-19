@@ -1,9 +1,10 @@
 import { dbInstance } from "../../src/dbCon";
+import Cors from "micro-cors";
 var dateFormat = require("dateformat");
 
-export default (req, res) => {
-  // const allPosts = postList();    //array of post obj
+const cors = Cors();
 
+function handler(req, res) {
   const postSlug = req.query.postSlug;
   let firestore = dbInstance();
   firestore
@@ -20,8 +21,10 @@ export default (req, res) => {
         details: postInfo.blogDetail,
         date: dateFormat(postInfo.blogTime, "mmmm dS, yyyy")
       };
-      
+
       res.status(200).json({ post: blogObj });
     })
     .catch(error => console.log("problem getting post", error));
-};
+}
+
+export default cors(handler);
