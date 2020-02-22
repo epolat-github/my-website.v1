@@ -5,7 +5,11 @@ const About = () => (
     <article className="container-fluid">
       <section className="row">
         <div className="col-lg-6 col-sm-12 mt-5 pl-5">
-          <img src="/photo.png" className="img-fluid"></img>
+          <img
+            src="/erinc-polat.jpeg"
+            className="img-fluid rounded p-3"
+            alt="Photo of Erinç Polat"
+          ></img>
         </div>
         <div className="col-lg-6" id="about-text-container">
           <ul>
@@ -37,6 +41,9 @@ const About = () => (
       }
       #about-text {
         color: white;
+      }
+      .img-fluid {
+        height: 80%;
       }
     `}</style>
   </Layout>
