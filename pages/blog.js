@@ -319,7 +319,7 @@ const createCards = post => {
 const Blog = ({ posts, postCount, currPage }) => (
   <Layout>
     {/* Blog special Buttons */}
-    {blogButtons()}
+    {/* {blogButtons()} */}
 
     {/* Sign-in Modal */}
     {signinModal()}

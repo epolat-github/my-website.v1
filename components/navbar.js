@@ -47,7 +47,7 @@ const Navbar = () => (
             <a className="nav-link">Portfolio</a>
           </Link>
         </li> */}
-          <li
+          {/* <li
             className="nav-item"
             data-toggle="collapse"
             data-target=".navbar-collapse.show"
@@ -55,7 +55,7 @@ const Navbar = () => (
             <Link href="/blog">
               <a className="nav-link">Blog</a>
             </Link>
-          </li>
+          </li> */}
           <li
             className="nav-item"
             data-toggle="collapse"
