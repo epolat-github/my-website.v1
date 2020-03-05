@@ -5,6 +5,9 @@ const firebase = require("firebase/app");
 require("firebase/firestore");
 require("firebase/firebase-auth");
 
+const zip = require("jszip")();
+// import saveAs from "save-as"; 
+
 // TODO: move config to .env
 var firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -81,11 +84,22 @@ export const deletePost = async postTitle => {
           .then(() => {
             resolve(true);
           })
-          .catch((error) => {
+          .catch(error => {
             console.log("Delete error: ", error);
             resolve(false);
           });
       });
     });
+  });
+};
+
+export const backup = async () => {
+  console.log("backup called");
+  zip.file("deneme.txt", "deneme\n");
+
+  zip.generateAsync({ type: "blob" }).then(content => {
+    console.log(content);
+    return content;
+    // saveAs(content, "deneme.zip");
   });
 };

@@ -3170,7 +3170,7 @@ Blog.getInitialProps = async ({
 /*!**********************!*\
   !*** ./src/dbCon.js ***!
   \**********************/
-/*! exports provided: authInstance, dbInstance, checkUser, currentUser, default, deletePost */
+/*! exports provided: authInstance, dbInstance, checkUser, currentUser, default, deletePost, backup */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3181,6 +3181,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "currentUser", function() { return currentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addDb; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "backup", function() { return backup; });
 /* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _pages_blog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/blog */ "./pages/blog.js");
@@ -3192,7 +3193,10 @@ const firebase = __webpack_require__(/*! firebase/app */ "firebase/app");
 
 __webpack_require__(/*! firebase/firestore */ "firebase/firestore");
 
-__webpack_require__(/*! firebase/firebase-auth */ "firebase/firebase-auth"); // TODO: move config to .env
+__webpack_require__(/*! firebase/firebase-auth */ "firebase/firebase-auth");
+
+const zip = __webpack_require__(/*! jszip */ "jszip")(); // import saveAs from "save-as"; 
+// TODO: move config to .env
 
 
 var firebaseConfig = {
@@ -3256,6 +3260,16 @@ const deletePost = async postTitle => {
         });
       });
     });
+  });
+};
+const backup = async () => {
+  console.log("backup called");
+  zip.file("deneme.txt", "deneme\n");
+  zip.generateAsync({
+    type: "blob"
+  }).then(content => {
+    console.log(content);
+    return content; // saveAs(content, "deneme.zip");
   });
 };
 
@@ -3446,6 +3460,17 @@ module.exports = require("firebase/firestore");
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-unfetch");
+
+/***/ }),
+
+/***/ "jszip":
+/*!************************!*\
+  !*** external "jszip" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("jszip");
 
 /***/ }),
 

@@ -1,5 +1,12 @@
 import addData from "../src/dbCon";
-import { dbInstance, deletePost, authInstance, checkUser } from "../src/dbCon";
+import { saveAs } from 'file-saver';
+import {
+  dbInstance,
+  deletePost,
+  backup,
+  authInstance,
+  checkUser
+} from "../src/dbCon";
 import Layout from "../components/layout";
 import fetch from "isomorphic-unfetch";
 
@@ -114,6 +121,17 @@ const Write = ({ posts }) => (
           onClick={() => handlePostDeleteClick()}
         >
           Delete
+        </button>
+        <button
+          type="button"
+          className="btn btn-lg btn-secondary mt-3 ml-3"
+          onClick={() => {
+            backup()
+              .then((content) => saveAs(content, "deneme.zip"))
+              .catch(error => console.log("error", error));
+          }}
+        >
+          Backup
         </button>
       </div>
       <div className="container post-list-container mt-4 mb-5">
