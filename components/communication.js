@@ -7,7 +7,7 @@ const Communication = () => (
           target="_blank"
           href="https://www.linkedin.com/in/erin%C3%A7-polat-4bb7bb192/"
         >
-          <img src="/socialMediaIcons/linkedin.png" className="icons" />
+          <img src="/socialMediaIcons/linkedin.png" alt="Erinç Polat LinkedIn" className="icons" />
         </a>
       </li>
       <li>
@@ -16,12 +16,12 @@ const Communication = () => (
           target="_blank"
           href="https://www.instagram.com/erincpolat"
         >
-          <img src="/socialMediaIcons/instagram.png" className="icons" />
+          <img src="/socialMediaIcons/instagram.png" alt="Erinç Polat Instagram" className="icons" />
         </a>
       </li>
       <li>
         <a rel="noopener" target="_blank" href="mailto:erinc.polat@gmail.com">
-          <img src="/socialMediaIcons/mail.png" className="icons" />
+          <img src="/socialMediaIcons/mail.png" alt="Erinç Polat Mail" className="icons" />
         </a>
       </li>
       <li>
@@ -30,7 +30,7 @@ const Communication = () => (
           target="_blank"
           href="https://github.com/epolat-github"
         >
-          <img src="/socialMediaIcons/github.png" />
+          <img src="/socialMediaIcons/github.png" alt="Erinç Polat GitHub"/>
         </a>
       </li>
     </ul>
