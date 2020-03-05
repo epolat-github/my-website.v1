@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\nimport Layout from \"../components/layout\";\n\nconst Portfolio = () => __jsx(Layout, null, __jsx(\"article\", {\n  id: \"portfolio-container\"\n}, __jsx(\"section\", null, __jsx(\"h1\", null, \"PORTFOLIO\"))));\n\nexport default Portfolio;","map":null,"metadata":{},"sourceType":"module"}

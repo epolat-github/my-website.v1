@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Layout from "../components/layout";
 import Communication from "../components/communication";
 
@@ -17,6 +18,14 @@ const Index = () => (
       </div>
     </article>
     <style jsx>{`
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      article {
+        height: 100%;
+      }
       .text-right {
         margin-right: 28%;
       }
