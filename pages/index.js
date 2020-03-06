@@ -33,7 +33,7 @@ const Index = () => (
         color: #d1a172;
       }
       .text-right {
-        padding-right: 17vw;
+        padding-left: 35vw;
       }
        {
         /* .text-right {
