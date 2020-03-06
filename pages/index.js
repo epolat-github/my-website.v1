@@ -30,6 +30,8 @@ const Index = () => (
         margin-right: 28%;
       }
       #summaryText {
+        display: table;
+        margin: 0 auto;
         margin-top: 4%;
       }
       #summaryText p {
