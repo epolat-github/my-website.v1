@@ -6,23 +6,27 @@ const Index = () => (
   <Layout>
     <article className="jumbotron bg-transparent">
       <section id="summaryText">
-          <p className="text-left text-wrap align-middle">
-            Erinç Polat = {"{"}
-            <br /> Full-time: "<span className="inline">learner</span>",
-            <br /> Part-time: "<span className="inline">student</span>"
-          </p>
-          <p className="text-right">}</p>
+        <p className="text-left text-wrap align-middle">
+          Erinç Polat = {"{"}
+          <br /> Full-time: "<span className="inline">learner</span>",
+          <br /> Part-time: "<span className="inline">student</span>"
+        </p>
+        <p className="text-right">}</p>
       </section>
       <div className="communication-container">
         <Communication />
       </div>
     </article>
     <style jsx>{`
+      article {
+        overflow: hidden;
+        height: 70vh;
+      }
       section {
         margin: 10vh auto;
       }
       p {
-        text-align: center!important;
+        text-align: center !important;
         color: white;
         font-family: "Roboto Mono", monospace;
         font-size: 4vw;
@@ -35,32 +39,11 @@ const Index = () => (
       .text-right {
         padding-left: 35vw;
       }
-       {
-        /* .text-right {
-        margin-right: 28%;
-      }
-      #summaryText {
-        display: table;
-        margin: 0 auto;
-        margin-top: 4%;
-      }
-      #summaryText p {
-        font-family: "Roboto Mono", monospace;
-        //letter-spacing: 10px;
-        #color: #4d4737;
-        #color: #66fcf1;
-        color: white;
-        font-size: 4vw;
-        font-weight: bold;
-        line-height: 1.6em;
-      }
-      .inline {
-        #color: #ba0d00;
-        color: #d1a172;
-      } */
-      }
 
       @media only screen and (max-width: 600px) {
+        article {
+          height: 85vh;
+        }
         #summaryText p {
           font-size: 47px;
           line-height: 1.8em;
